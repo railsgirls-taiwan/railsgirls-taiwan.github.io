@@ -1,0 +1,140 @@
+---
+layout: default
+title: 使用 HTML 與 CSS 添加設計
+permalink: design
+---
+
+# 使用 HTML & CSS 添加設計
+
+*Created by Alex Liao, [@alexliao](http://bannka.com/alex)*
+
+*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+
+現在 app 執行的很好，但看起來仍像是用鷹架搭的。讓我們加點設計到 app，讓它看起來像專業的網站吧。當妳完成本教學時，妳的 app 看起來會像[這樣](http://railsgirlsapp.herokuapp.com/ideas)。
+
+## 第一步：調整應用的版面
+
+首先，讓我們用輕量的 bootstrap.min.css 來美化妳的 app。
+
+在編輯器裡打開 `app/views/layouts/application.html.erb`，並將下面這行
+
+{% highlight html %}
+<link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
+{% endhighlight %}
+
+換成這個
+
+{% highlight html %}
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+{% endhighlight %}
+
+並把
+
+{% highlight html %}
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+{% endhighlight %}
+
+用這個換掉
+
+{% highlight html %}
+<div class="topbar">
+  <div class="fill">
+{% endhighlight %}
+
+開啟 `app/assets/stylesheets/application.css`，把這行
+
+{% highlight html %}
+body { padding-top: 100px; }
+{% endhighlight %}
+
+換成
+
+{% highlight html %}
+body { padding-top: 60px; }
+{% endhighlight %}
+
+最後，刪除這個檔案 `app/assets/stylesheets/scaffolds.css.scss` 因為我們不需要 Rails 幫我們產生的預設樣式。
+
+現在重新整理這個頁面 [http://localhost:3000/ideas](http://localhost:3000/ideas)。妳目前看不到什麼變化，但這對接下來的步驟很有用。
+
+## 第二步： 精鍊導覽列
+
+考量到 "idea" 是 app 裡最重要的東西，我們即將把 "New idea" 按鈕放到導覽列，讓人馬上可以找到。
+
+開啟 `app/views/layouts/application.html.erb`，在這行下面
+
+{% highlight erb %}
+<li class="active"><a href="/ideas">Ideas</a></li>
+{% endhighlight %}
+
+加入
+
+{% highlight erb %}
+<li ><%= link_to 'New Idea', new_idea_path %></li>
+{% endhighlight %}
+
+## 第三步：設計 idea 清單
+
+現在是時候讓我們的 idea 清單看起來專業點了。我們要把版面的從表格換到 div。
+
+**教練：** 講一下表格與 div 的差別。
+
+用編輯器打開 `app/views/ideas/index.html.erb`，把整個檔案換成這個
+
+{% highlight erb %}
+<h1>Listing ideas</h1>
+
+<% @ideas.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |idea| %>
+      <div class="span4">
+        <%= image_tag idea.picture_url, :width => '100%' if idea.picture.present?%>
+        <h4><%= link_to idea.name, idea %></h4>
+        <%= idea.description %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+{% endhighlight %}
+
+**教練：** 逐行解釋這段新的程式，並講講什麼是 Bootstrap 的 12 網格版面。
+
+重新整理！我們獲得了一個可愛的 idea 清單。按下 "New Idea" 按鈕，用真實的文字與漂亮的圖片加入更多想法吧！─ 網頁有越多內容，看起就會更好。現代網頁設計原理之一：內容是最好的裝飾品。
+
+## 第四步：設計 idea 的細節頁面
+
+按下 idea 的標題，妳會被帶到 idea 的細節頁面。現在看起來仍然是用 Rails 鷹架產生的，讓我們來把它變更好吧。
+
+用編輯器打開 `app/views/ideas/show.html.erb` 把整個檔案換成這個
+
+{% highlight erb %}
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="span9">
+    <%= image_tag(@idea.picture_url, :width => "100%") if @idea.picture.present? %>
+  </div>
+
+  <div class="span3">
+    <p><b>Name: </b><%= @idea.name %></p>
+    <p><b>Description: </b><%= @idea.description %></p>
+    <p>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', @idea, confirm: 'Are you sure?', method: :delete %> |
+      <%= link_to 'Back', ideas_path %>
+    </p>
+  </div>
+</div>
+{% endhighlight %}
+
+
+**教練：** 逐行解釋這段新的程式碼。
+
+## 下一步
+
+* 使用新學到的知識來設計新的想法
+
+* 如果妳想的話，可以加入更多設計。
+
+* 按照其它指南學更多 Rails

@@ -1,1 +1,4 @@
+.bundle/
 _site/
+.DS_Store
+server/

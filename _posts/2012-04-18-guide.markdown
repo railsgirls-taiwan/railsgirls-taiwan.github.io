@@ -1,0 +1,522 @@
+---
+layout: default
+title: 指南
+permalink: guide
+---
+
+# 如何辦活動教學
+
+## 舉辦首場 Rails Girls 活動
+
+我們的宗旨是賦予女性理解技術的工具。Rails Girls 活動對於每個想打造網路世界的人都是一次絕佳的體驗。
+
+Rails Girls 於 2010 年底在赫爾辛基成立。本來只是個一次性的活動，從未想到世界各地會出現有這麼多的分部！本教學把所有資源集結起來，來幫助妳舉辦首場活動。
+
+如果想辦場活動，從填寫 [http://railsgirls.com/inyourcity](http://railsgirls.com/inyourcity) 開始，我們的人將會聯絡妳。
+
+未來將舉辦的活動可以在這裡找到 [www.railsgirls.com](http://railsgirls.com)。
+
+### 基礎
+
+Rails Girls 活動是非盈利性的。我們不跟參加者收費，也不會支付報酬給教練或是講師。參加者不需要有任何的程式知識，也沒有年齡限制。只要有台筆電和一點好奇心就可參加！
+
+為期兩天的活動包含了大量的小組協作及一些簡短的演講，重點介紹編程、設計、以及 web。不會有八股的辯論或是演講 ─ Rails Girls 的精神是務實與隨和。抽象的概念越少越好，實踐精神越多越好。
+
+#### Rails Girls 哲學
+
+* 讓人格特質散發光彩，將遠景銘記在心。反覆解釋一個觀念時，記得將觀念與大環境放在一起看。
+
+* 網路是人打造出來的，不會因為你的牛刀小試而崩壞。要一直展現人性的一面：鼓勵教練討論開源社群、偶像以及啟發他們的故事。
+
+* 複製貼上是王道！寫程式不是最重要的 ─ 一天不可能學的會中文，用同樣的角度看，妳只能學會在程式領域裡，如何表達想法以及一些基本的術語。活動的目標是能有馬上能看到的成效展現給學員。
+
+* 世界因女孩而精采！但女人、女士甚至是男孩們都可以參與進來。這裡的“女孩”不僅限於語義上的女孩，是指一種心態。Rails Girls 的兩位創辦人都是聽著辣妹合唱團的歌長大的，女孩不是指可愛的小女生，或是有負面涵意，而是指一種對世界充滿好奇的心態。
+
+### 範例議程
+
+每場 Rails Girls 活動由一場“安裝節慶”開始，將活動所需的環境安裝在女孩們的電腦上。 這裡有準備好的[教學指南](/install)。安裝節慶可以包含簡短的演講，但重點是給女孩提供氣泡酒，將隔天活動所需的一切準備好，讓女孩們互相認識。時間應該是可以靈活調整的 ─ 你知道該怎樣分配時間，對參與者最好。我們有在週末與工作日辦過活動的經驗。連續兩個晚上（下午四點至晚上十點），這可能會更符合你的需求。
+
+#### 工作坊的教學目標
+
+* 理解靜態與動態網頁的差別。
+
+* web 世界的術語：讓學員了解網路應用需要什麼基本元素有個簡單的了解。編程的術語：字串、方法、變數、陣列、破壞性方法、鏈鎖、雜湊、符號、區塊等等。以及認識工具（像是終端機、瀏覽器、文字編輯器）。對打造網路的積木有個概念性的理解：程式語言、網路框架、資料庫、基礎設施。
+
+* 讓學員有個概念，不管是在有網路，還是沒網路的情況下，如何在程式的世界裡持續學習。
+
+#### 週五夜晚：安裝
+
+19:00 - 21:00 安裝與互相認識
+
+*提示*：設立一個教練桌，讓有安裝問題的學員來問問題。
+有些安裝可能會失敗：遇到這種情況，讓女孩跟別人一起學習，不要在安裝上浪費太多時間。
+
+會場用氣球與海報佈置。在活動上放一些有趣的[音樂](http://open.spotify.com/user/lindaliukas/playlist/1fgkUFCFDrSn621kf4iHhr)。
+
+想一些活動來打破尷尬：比如讓女孩在便利貼寫下為什麼來參加活動，或是畫她們夢想中的 web 應用。
+
+記得要來個 [Friday 抱抱](http://fridayhug.com)！
+
+九點 -> 教練晚餐
+
+教練們可以一起溫習第二天要講解的應用。
+
+#### 禮拜六：工作坊
+
+09:00 - 10:00 註冊與咖啡時光
+
+*提示* 預留足夠的時間讓大家混熟，並為昨天仍有安裝問題的學員解決問題。分發講義，蒐集 Bentobox 練習會用到的技術詞縮寫。
+
+10:00 - 10:10 歡迎致詞
+
+*提示* 提一下贊助商，展示即將打造的 web 應用，簡單介紹寫程式是怎麼一回事。
+
+10:30 - 11:00 用戶體驗 (UX)工作坊
+
+11:00 - 11:30 編程簡介
+
+*提示* 請一位教練講解寫程式。並解釋為什麼用 Rails 要懂點基本的 Ruby。
+
+主題應包含：
+
+* 靜態與動態網站的差別：什麼是 web app？
+
+* 程式語言是什麼？什麼是 Rails？
+
+* 會用到的工具：瀏覽器、終端、程式碼編輯器、目錄結構。
+
+展示並介紹 [TryRuby](http://tryruby.org)，一起做 3-4 個練習。
+
+
+11:30 - 13:00 工作坊時間
+
+慢慢的走一遍 [Rails Girls 教學 APP](/app)。記得停下來解釋你在做什麼，以及重要的觀念。試著簡單的解釋觀念，即便是犧牲了準確性。不需要討論高深的概念。試著回答她們的問題，當問題過於艱澀或超出範圍時，應直接跳過。不是要教她們完美的編程技巧，而是讓她們看看事情是如何完成的。先打造 web app 出來，接著才想怎麼做好。
+
+概念應包含：
+
++ Rails Generators
++ Scaffolds: Rails App Structure
++ Gem Management
++ MVC, REST/Resources
++ Models and Active Record
++ Controllers and ActionController
++ Views and ERB
+
+*小提醒：*
+
+教練也是人。他們也是第一次當教練。教學對他們來說可能很難或是怯場，記得要在不同情況下，比如教練有困難時，即時幫助他們，即便只是鼓勵與支持。
+
+13:00 - 14:00 午餐時光
+
+14:00 - 14:30 Bentobox 練習
+
+將技術性的術語放在一個叫做 Bentobox 概念性的模型的語境裡。
+
+兩個練習：一、用實際的 Bentobox 板子來講解 10 個技術觀念。二、過一下女孩交給教練的名詞。
+
++ [Bentobox 投影片](http://speakerdeck.com/u/railsgirls/p/rails-girls-bentobox-exercise)
++ [教學影片](http://vimeo.com/39049632)
+
+14:30 - 18:00 工作坊時間
+
+到了繼續開發應用的時間了。注意氣氛：當大家無法集中注意力的話，讓教練或講師講個快速的閃電秀。
+
+閃電秀的範例講題：
+
++ （女性）職業程式設計師講講她在這個行業裡的體會。
+
++ 設計：UX 與 UI。用紙或電腦一起畫個 mockup。
+
++ 用有趣的方式來解釋技術觀念，或是熱門的框架：用 80 年代的經典老歌解釋 CoffeeScript？你心目中的 GitHub？編程與寫作有什麼共通點？
+
++ 展示一些實際的東西：不要講抽象的事情，具體點，講一些真實的故事。
+
+當所有人都完成她們的 app 時，是時候透過修改 CSS 來擴充應用了或是加入評論系統等等。
+
+19:00 After party
+
+*提示：*
+邀請所有人，包括當地的開發者、男孩子們、以及沒被錄取的參與者來參加！
+
+[Fork this project on GitHub][github], add yourself, and send us a pull request.
+
+[self]: http://guides.railsgirls.com/ "The Rails Girls Guide"
+[github]: https://github.com/railsgirls/railsgirls.github.com "Fork on GitHub"
+
+#### 資料
+
++ [下載資料](http://www.speakerdeck.com/u/railsgirls)
+
+### 推廣 Rails Girls
+
+每個 Rails Girls 活動都會在 railsgirls.com/city 得到一個專屬的頁面，用來記錄與蒐集資訊。過去主辦過的城市請參考 [railsgirls.com/events](http://railsgirls.com/events)
+
+妳也可以設定自己的 Facebook 以及 Twitter 專頁（記得把連結加到 workshop 頁面！）或是其它在你們當地很紅的服務。透過社群媒體推廣活動有很長的路要走，但確定妳有人可以處理這些管道。一點建議：
+
+* 文章保持友善，正面及歡迎的語調。直接邀請粉絲或關注者分享 Rails Girls 活動給她們的朋友。
+
+* 圖片是強而有效的語言。製作自己的圖片 (**某些想法：“我是個 Rails Girls” 當成 Facebook 活動的封面圖片，有參加女性名字的文字雲，應用程式的資訊圖表**) 或在別的由你主持的活動中推廣。跟隨其它 Rails Girls 頁面與帳號，來獲得內容的靈感並告訴你的社群。
+
+* 試試不同的聲音來吸引不同型態的女性；某些女性參加只是為了開心，交新朋友；某些只是因為想證明男人辦的到的事情，她們也辦的到。不用只專注在某一族群。
+
+* 不用害怕在公開場合感謝女性、教練、部落格、媒體或是其他幫助你散佈 Rails Girls 活動消息的人。
+
+* 如果語言有這選項的話，談到女性時用陰性形式。
+
+活動進行時，記得拍照，蒐集 tweets 並問參加者問題。你所做的一切大家在下次活動會感謝你。我們喜歡寫文章介紹講者及參加者。教練清單也是必要的。
+
++ [下載素材](http://www.speakerdeck.com/u/railsgirls)
+
+#### 網站
+
+寄 E-mail 到 contact(a)railsgirls.com 並要求把你的分部加入 repo。看看 README.txt 了解更多細節！在成立網站之前，應該至少有兩個教練及一個掛名贊助商。
+
++ [Counter for the site] (https://github.com/ys/rails-girls-count#readme)
+
+#### 去哪找當地的開發者？
+
+* Google 啊！幾乎每個國家都有某種類型的 Rails 或 Ruby 社群（有時候叫做 Ruby Brigage 或 Ruby Tuesday）。找找看 [Hacker News]() 的聚會、[GitHub](http://www.github.com) 貢獻者或 [Dribbble](http://dribbble) 起草人。找到當地的開源社群。逛逛看技術性的會議（這裡有個主題是 Ruby 的[清單](http://rubythere.com/)），以及 [meetup.com]() 上的 meetups。打給軟體開發公司，大家小家都可以。別忘了還有 IRC 跟 podcasts。
+
+* 在 [Twitter search](https://twitter.com/#!/search-home) 上搜看看 `#rails` 或是 `#ruby` 以及 `#開源` 等 hashtag。比如要找到住紐約，附近 15 英哩的人，可以用這樣搜索看看 "near:NYC within:15mi"。某些國家有特別的 hashtags 像是 `#Rubysur` 或 `#RubyArg`，問問看便知道。
+
+* 創業社群。辦活動、找社群？Startup Digest 是一個好的開始。
+
+* 通常會有一兩個關鍵人物能幫你引薦，技術的世界其實小的不得了。
+
+#### 去哪找參加者？
+
+* 使用社群媒體：Facebook、Twitter、或是當地的社群像是微博。朋友、女朋友、同事！
+
+* 當地[技術女子社群](https://twitter.com/#!/gitweet)、[DevChix](http://www.devchix.com/)、[Geek Girl](http://geekgirlmeetup.com/) 等。也看看 [Meetup.com](http://www.meetup.com/)。Twitter 清單，像是 @anitaborg 的 [Tech Women Programs](https://twitter.com/#!/anitaborg_org/tech-women-programs)，或是其他類似的。
+
+* 換個角度想想看：大學、書店、音樂店、設計工作室、[Esty](http://www.etsy.com)。我們想要各式各樣背景的女性參加，對技術感興趣的女性。
+
+#### 如何獲得媒體關注？
+
+Rails Girls 的重要目標之一是，讓女性成為建造網路世界的主力。這也是為什麼我們鼓勵當地媒體，把報導重點放在參加者以及她們的熱情。我們很願意幫忙準備新聞稿。參考 [railsgirls.com/press](http://railsgirls.com/press) 了解更多。如果正與成為贊助商的大公司接洽，她們的人資部可能可以幫妳宣傳工作坊的訊息。
+
+將新聞稿發佈到當地的部落格，找多家媒體宣傳。嘗試越多，收獲越多。將你聯絡的部落客或記者的清單列出來，將回信的人圈起來，這樣下次有新聞稿時，可以優先發給他們。你也可以在辦完活動之後，寫篇圖文並茂的新聞稿，摘錄些感到滿意的參與者描述。
+
+### 贊助
+
+Rails Girls 針對的是不易接觸的族群：對技術感興趣的女性。她們可能是潛在的參加者、員工或是贊助商的合作夥伴。
+
+我們找的贊助商是當地科技業的活躍份子，不管是新創行業或是大公司，非盈利組織或是政府機構。
+
+同時非技術公司也可以接觸看看：嬰兒用品店、大學、女性雜誌、啤酒品牌等。總有某些人會對技術感興趣的。
+
+Rails Girls 必須是非盈利性的：如果有剩餘經費，應該用來支持下次活動的參與者。別忘了你不需要很多資金，即便是兩人新創公司也可能願意捐款。
+
+### 給贊助商的書信範例
+
+Dear xxx,
+
+We are organizing a Rails Girls programming workshop in (insert city) on (insert dates).
+
+Rails Girls is a two-day non-profit event for women of all ages to give them a great first experience in software craftmanship. We aim to give the tools to understand technology along with the community and inspiration to get started.
+
+Rails Girls is not just about programming, it’s about building things. During the workshop, we’ll build an application and also have inspiring lightning talks and exercises.
+
+For a closer look, please see www.railsgirls.com for past events and coverage.Here’s also a short video on the Berlin event held in April 2012: [http://vimeo.com/40852182](http://vimeo.com/40852182)
+
+We are now looking for sponsors to help us realize this all.
+We’d love to have your support!
+
+Yours, name
+
+### 大約要花多少錢？
+
+以下是根據 30 位參加者，10 位教練的花費預估 — 但有很多可能性。最簡單就是找個當地的贊助商直接買單，或是某人設個帳戶來處理錢。以下的計算參考芬蘭的物價，單位是歐元，芬蘭的食物與酒非常貴，但場地通常不用錢。總而言之你只需要大約有一千歐元（約 3 萬 9000 元新台幣），就可以輕鬆舉辦活動了。
+
++ **氣泡酒與酒杯** 安裝晚宴用。6 瓶，一瓶 6 歐元，36 歐元。
+
++ **早餐、咖啡與點心** 每人 5 歐元，40 人 200 歐元。
+
++ **午餐** 外燴可能是 15 歐，但自己煮可以更省錢。加上水與咖啡（50 歐元），大約是 650 歐元。
+
++ **行銷資料** 印工作書、訂貼紙、海報以及其他東西。等等，這價格變化很大，有可能你能用別人的印表機，但至少要準備個 200 歐元。
+
++ **教練晚餐** 下飯館或煮家常菜。感謝教練當義工的一種途徑。大約每人 20 歐元。200 歐元。
+
++ **場地** 試著找人贊助場地或出錢，因為可能非常貴。通常新創公司願意合作並提供場地（尤其是週末）。0 - XXXX 歐元。
+
++ **結束派對** 如果可以辦個有免費啤酒的好派對非常好，但也可以在當地小酒吧喝喝酒保持低調，或在公園也可以！0 - XXXX 歐元。
+
++ **旅費開銷** 如果你的國家沒有任何 Rails Girls 團隊成員，考慮邀請她們過來。我保證我們不用住在高級的旅館！同樣你也可以邀請講師到活動演講。0 - XXX 歐元。
+
++ **總計 1286 歐元。**
+
+__贊助商可以獲得什麼？__
+
+* 活動網站上擺放 Logo。
+
+* 活動時有張桌子，可以分發傳單或是紀念品。
+
+* 有機會與與會者談 5 分鐘。
+
+* 多數的活動裡，活動結束後贊助商可以使用官方拍的照片。
+
+別洩漏參加者的資訊，但贊助商可在活動分發傳單讓人填寫。記得要給贊助商寫個感謝小卡。贊助商的紀念品可以包含在禮包裡，要是有用的東西，與女性有關的東西，而不是對女性無用的物品。
+
+---
+
+## 常見問題
+
+#### 誰可以舉辦 Rails Girls 工作坊？
+
+任何人。我們在找的是一群這樣的人，花心思讓女性第一次進入網路世界，就留下美好的初體驗。我們想看到的是擁有如下特質的人（不用全都滿足）：
+
+* 熟悉當地開發者社群。不分技術，所以不用是純 Ruby 或 Rails 開發者。實際上每個活動需要 5 位（或更多，取決於妳要收多少學員），具有 Rails 基本知識的教練，貢獻兩天時間時間投入活動。每次活動大約是 25 - 40 人。
+
+* 了解如何舉辦活動的人。不用非常厲害，但至少有點經驗。
+
+* 對於如何找到對技術感興趣女性的人有想法的人。我們找的是對科技感興趣的女性，不管大學學的是文學、還是藝術、或是體育，都可以，我們要找的是沒有寫程式經驗，但對技術感興趣的人。
+
+* 未來當女性碰到問題，或是想舉辦她們的活動、找到當地開發者聚會時，願意指點她們的人。
+
+你是這樣的人嗎？從填寫這個表格開始：[http://railsgirls.com/inyourcity](http://railsgirls.com/inyourcity)，我們的人將會聯絡你。
+
+#### 哪裡可以找到海報、名牌、投影片等等資料？
+
+下面這個連結，有缺什麼請告訴我們！
+
++ [下載素材](http://www.speakerdeck.com/u/railsgirls)
+
+#### 怎樣的場地合適？
+
+推薦可容納 30 到 50 人有完整設施的場地。針對一個開發者的活動，這代表：
+
+* 經過測試，速度快的網路。將會有 30 台電腦同時連線。還有智慧型手機、還得線上播放音樂、有趣的影片，你懂得！
+
+* 4-6 人小組可聚在一起的空間：椅子及桌子，有時候大枕頭也可以！不需要所有人在同一個房間。
+
+* 提供延長線與投影機的可能性。
+
+* 足夠分享的插座。有些女性可能用較舊的筆電，需要一直插著電源。
+
+* 有專門供應食物與飲料的地方 — 專門提供外燴午餐的空間，附近餐廳吃也可以。
+
+* 外接螢幕（非必要），讓教練可以講解程式。
+
+* 白板可以讓教練有效的解釋抽象概念。也可以用紙筆取代。有個東西讓大家可以寫就可以。
+
+詢問當地的開發者，哪裡經常舉辦聚會。通常共同工作空間會願意提供場地，因為她們想增加知名度。
+
+
+#### 教練需要具備什麼？
+
+Rails Girls 活動是小組工作模式，理想上最多 4-5 人配一名教練，可能的話，一個教練、三個女性最好。舉例來說，有 30 位女性參加者及 10 位教練（最好有些備用的教練）。我們知道這不太可能，但不要超過 5 個女性一組，這樣教練才可回答小組裡每個人的問題。
+
+教練不需要是 Rails 專家 — 有點 Rails 基礎就好，積極解答問題比專業重要。如果當地的 Rails 社群不夠健全的話，在找找吧。可以是 Rails 專家與其他框架的專家組合起來。我們要找是，喜歡回答問題，樂觀進取，並可以把場面撐著 8 小時的人！
+
+你可以看看課程大綱 [Rails Girls App 教學](/app)。活動前教練可以共進晚餐，用來討論教學建議、並確保每個人進入狀況。避免使用術語，用例子來解釋你正在做的事，鼓勵大家問問題。安裝步驟可以看[安裝食譜](/install)。我們理解教練也是人，大多數教練都是第一次教人。別緊張 — 女性只要能學到任何事情、以及有機會問問題就會很開心了。
+
+我們希望教練對於把他們的 Twitter、GitHub、別的聯絡方式放在 railsgirls.com 上不感冒，這樣女性才可以找到當地的開發者來回答他們的問題。
+
+除此之外，我們鼓勵教練為小組想些額外的練習。在完成 idea app 之後，許多女性會想試著美化外觀、改變看起來的感覺、實現評論功能、Facebook 分享功能、將 app 上傳至 Heroku 等。
+
+#### 去哪找教練？
+
+四處問問，問問贊助商（科技公司），問問任何可幫得上忙的人。一旦你有了一些教練，他們可以幫妳找到更多人。當地開發者社群有影響力的部落客或 Twitter 使用者，可以幫忙你轉發招募教練的需求。
+
+**提示** 可以感謝帶女朋友一起來的教練 ;)
+
+##### 給潛在教練的信件範本
+
+"Dear community member,
+
+We wish to invite you to take part in the Rails Girls event on (insert date). The event is aimed for women of all ages with no previous programming experience, but a lot of passion to building things. Rails Girls is an international non-profit, volunteer-based workshop. We've had events in Shanghai, Berlin, Helsinki, and Singapore. We expect to receive around a 100 applications.
+
+In addition to giving a safe and fun first experience to coding for the women we want to engage them with local developers, open source, and the startup scene. We've attached some information on what coaching requires in practice. In addition, we have room for small lightning talks on technical subjects. If you have something you'd like to speak about, let us know.
+
+For more information about the non-profit event, check railsgirls.com or guides.railsgirls.com
+
+(You can also include the chapter "What is expected from the coaches" to the mail)"
+
+---
+
+#### 我會獲得什麼素材？
+
+每個 Rails Girls 活動獲得一個專屬的網頁。
+
+除此之外，我們會幫妳設計禮包、海報樣板、工作書及其他東西像是貼紙啦、反光貼紙等。所有的素材都可以在這個網站上找到。也可以詢問贊助商是否有意願要贊助什麼物品。我們一向歡迎有創意的 Rails Girls 分部，如果你有想法的話，告訴我們吧！
+
+目前為止，我們有
+
+* 貼紙
+
+* 反光貼紙
+
+* 刺青
+
+同時看看這個
+
++ [下載素材](http://www.speakerdeck.com/u/railsgirls)
+
+#### 選擇參加者的標準？
+
+在報名表我們只問兩個問題：你有任何的寫程式經驗嗎？以及為什麼妳是個好的 Rails Girls？
+
+Rails Girls 是為所有人設計的，我們想讓它適用於所有年齡層的學習者。但是，明確的告訴參加者她們會學到什麼：Rails Girls 不會讓任何人變成程式設計師，想轉行的人可能會失望。另外我們喜歡有多元背景或是非常熱情的參加者。
+
+挑選完參加者之後，通常會分成三組：
+
+1. 沒有程式經驗的人
+
+2. 有某些前端經驗的人（HTML, CSS, JavaScript）。
+
+3. 有點程式經驗或是背景是資工的人。
+
+可以給不同小組的人用不同的名牌（rubies, foxes, octocats, rails...）
+
+##### 錄取通知信範本
+
+Title: Rails Girls workshop - welcome!
+
+Dear attendee,
+
+Congratulations! We’re happy to invite you to join in on the  Rails Girls workshop in (insert city). We hope that this workshop will provide you a great first experience on building web apps.
+
+What happens next?
+
+(Insert date for installation fest) starts at (insert time) with an installation fest - so please bring your laptop with you! You should also try to pre-install Rails with instructions from <http://guides.railsgirls.com/install/>
+
+We will hold the event in (insert address)
+
+On (insert date) we’ll dive into development. We’ll work in small groups with four to six person teams. Your team members will have about the same experience level as you. We'll be all developing a simple listing application. We'll wrap the day around (insert time). There's also going to be an evening party.
+
+We have a lot of people wanting to get to the class, so if you can’t make it this time, let us know as soon as possible!
+
+If you have any questions, please don't hesitate to contact me. We'll also be updating the website at (insert address)!
+
+Best,
+
+(Signature)
+
+##### 拒絕信範本
+
+Title: Rails Girls - not accepted this time
+
+Dear applicant,
+
+Unfortunately we couldn’t fit you in the workshop this time. To be able to give personal guidance to each participant, we could only take a fraction of the applicants. This time we prioritized women with no previous programming experience.
+
+However, you're warmly welcome to the official afterparty. (Insert details).
+
+We'll also be most likely organizing more events in your city. Follow twitter.com/railsgirls or facebook.com/railsgirls for more information.
+
+There's always cancellations and we fill all available places, so we might still be taking in a couple of people!
+
+Best,
+
+(Signature)
+
+##### 參加者感謝信範本
+
+Dear Rails Girls,
+
+Thank you for taking part in the Rails Girls event. We truly felt lucky to have such a talented & enthusiastic crowd of people with us and hope many of you will continue working with Rails in the future - you have the tools, now build something cool!
+
+(Say a few words about the sponsors and coaches - thank you for the community)
+
+Three things we want to share:
+
+Workshop Materials
+(Almost all) materials can be found in the guides section at http://guides.railsgirls.com. You can find presentations, materials and instructions from the workshop. If you took pictures or blogged about the event - let us know! We'll be publishing regularly on blog.railsgirls.com
+
+Make Rails Girls better - give us feedback!
+We want to hear from you! Give us feedback about the workshop or how we can make the event better – it’s really quick, and it’ll help us improve our workshop at railsgirls.com/feedback
+
+Keep on coding!
+We realize there was quite a lot of stuff in todays lecture and for most of you it all felt a little overwhelming. We strongly recommend trying out Rails for Zombies exercise at http://www.codeschool.com/ latest by next weekend, it'll refreshen all you've learned so far and teach you some more.
+
+Two things to keep you going:
+- (Insert here a couple of community events that the participants should take part in)
+
+There was a LOT of interest in doing follow-up events. If you have ideas for this or want to volunteer for the organizing team, let us know and sign up for the group e-mailing list at http://groups.google.com/group/rails-girls-team!
+
+And thats all for now,
+Your Rails Girls team
+
+#### 活動結束後呢？
+
+邀請真正的開發者來當 Rails Girls 的教練不僅給參與者一個做中學的機會，也降低了進入技術世界的門檻。但如何讓她們繼續寫程式呢？
+
+* 鼓勵她們繼續練習，像是 Codecademy 或其它線上學習網站。
+
+* 提兩個最近會舉辦，教練會去參加的活動。試著讓女性參加真正的開發者聚會。
+
+* 邀請每個人加入 Facebook 小組，讓她們有地方可以問問題。
+
+* 一個月之內再次邀請參加者聚會一次。可以在 Rails Girls 全球聚會頁舉辦這些活動 <http://www.meetup.com/Rails-Girls/>，我們會很開心地替你推廣活動。用什麼名義繼續聚會不重要，重點是大家出來聚會。
+
+---
+
+## 備忘錄
+
+以下是個小小的備忘錄。Rails Girls 可以幾週內準備完畢，但好活動是很花時間的，最少準備兩個月。以下的步驟不是都是必要的，只是用來幫助你記憶。
+
+### 活動開始前
+
+* 填寫[申請表](http://railsgirls.com/inyourcity)，我們的團隊會聯絡你！
+
+* 開始在 Google Docs 上寫專案計畫
+
+* 決定日期與場地
+
+* 聯絡當地教練 — 找五個人願意加入的教練。
+
+* 發佈網站：確定主題
+
+  1. 日期與地點。
+
+  2. 報名截止日。
+
+  3. 約 200 字的簡短介紹。可參考以往的活動！
+
+  4. 當天的講者
+
+  5. 合作夥伴 — 兩句話介紹，以及 100 x 100px 或 250 x 250px 大小的 logo，PNG 格式。
+
+  6. 教練的 Twitter ID
+
+* 開始推銷活動，可以用[這裡](http://www.speakerdeck.com/u/railsgirls)的材料。
+
+* 開始找贊助商
+
+* 與媒體接觸以及寫個活動前的故事
+
+* 寄信給錄取與未錄取的申請人
+
+* 寄安裝步驟及活動細節給參加者
+
+* 選教練共進晚餐的日期，寄給他們 App 教學。
+
+* 看看同時間是否有一起舉辦的活動
+
+#### 活動進行中
+
+* 推特！
+
+* 記得拍照
+
+* 採訪參加者與講者，關於參加本次活動的體驗。
+
+* 記得做 Firday 抱抱！關於更多 Friday 抱抱的訊息：[Fridayhug.com](http://fridayhug.com)。
+
+* 與同時在世界別處舉辦 Rails Girls 活動的人 Skype 視訊。
+
+#### 活動結束後
+
+* 更新網站，加入圖片與心得文。
+
+* 上傳照片到我們[官方的 Flickr 小組](http://flickr.com/groups/railsgirls/)，記得選 [Creative Commons](http://www.flickr.com/groups/railsgirls/discuss/72157634650757777/) 授權！
+
+* 邀請活躍的參與者加入[全球郵件列表](https://groups.google.com/group/rails-girls-team)。
+
+* 寄一個感謝函並詢問[意見](http://www.railsgirls.com/feedback)（可以創一個當地語言的表格）。
+
+* 寄感謝函給教練。
+
+* 寄感謝函給主辦者。
+* 將你們加到 [Rails Girls 地圖](http://rails-girls-map.herokuapp.com/)

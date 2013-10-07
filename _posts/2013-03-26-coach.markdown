@@ -1,0 +1,98 @@
+---
+layout: default
+title: 教練指南
+permalink: coach
+---
+
+# 當一個 Rails Girls 教練
+
+**所有關於當教練的基本問題皆可在此找到**
+
+### 我需要具備什麼才能當 Rails Girls 的教練？
+
+所以你聽過 [Rails Girls](http://railsgirls.com/)。現在你在想說怎麼樣才能在工作坊中當教練？太好了！有興趣想要 幫助初學者進入網路開發的世界，已經是個很好的先決條件了！你還需要什麼？
+
+- 耐心、願意幫助人以及友善的態度 :)
+
+- 可以在工作坊全程，用初學者也能聽懂的方式回答任何問題（即使技術上來說，解釋不完全是正確的也無妨）
+
+- 有網路開發的經驗（你知道 MVC 是什麼吧？）不需要懂 Rails。
+
+- 有時間在活動前看看 [基本的 app 教學][app]
+
+### 為什麼我要當 Rails Girls 的教練？
+
+除了結善緣之外，還有很多你非常可能得到的好處：
+
+- 你會認識很多 Programmer 圈圈外的有趣新朋友。
+- 你有可能要回答許多你沒有想像過的問題，並藉此學到一些新東西。
+- 你會得到你們小組的女孩們跟 Rails Girls 社群無限的感激。
+- 你從未見過的傳說[週五抱抱](http://fridayhug.com)。
+- 你會幫忙打破「女生對科技及寫程式不感興趣」的刻板印象，而因此幫助你的姐妹、女生的朋友跟親戚，（未來的）女兒，讓她們未來能有更多的選擇。而且你還可以把這件事加到你的履歷上！
+
+### Choice of technology
+
+Rails Girls workshops give the first experience in software craftsmanship through introducing the participants to Ruby, Rails and HTML/CSS. The curriculum has been built around these technologies. If the workshop is too difficult or deep, it will not encourage the beginners to continue as it's perceived too hard. Rails Girls workshops are not about learning programming fast and efficiently. It's about the open environment, excitement and getting to know the tools they can use, and having a great day learning about programming, the community, web apps and more. We would love to see other additions to e.g.follow up meetups. If you'd like to host a beginner-friendly, welcome event for women in other technologies or frameworks, we strongly encourage you to do so and use the existing materials. All Rails Girls content is licensed under creative commons.
+
+
+### Time to complete app
+
+There's loads of time to complete the app, and so it is more important to slowly explain what is happening in each step, as it is a lot of copy pasting and if attendees rush through the guide, they will be done soon but not understand at all what happened.
+<br> There's a LOT (4-5) h reserved for the app, tweaking it and putting it online for others to see so there is no hurry :)
+
+
+### Swag
+
+Believe it or not, for most, it is really important. It makes the environment different. You decide how, but little crafts (making buttons), stickers, cupcakes, balloons, posters, or anything you can come up with makes all the difference.
+
+
+### Inclusivity
+
+Rails Girls is a an inclusive, safe and welcoming experience to everyone. The workshops are primarily intended for beginner women and crafted for this specific user group, but we've always been open to including other skill-levels and genders. Rails Girls coaches are male and female. The end goal of Rails Girls is to enriched the entire Rails community by encouraging more diverse people to join it. If you want to make a different curriculum or group, all the material is online and you are welcome to use it under another name and brand.
+
+### 要是我從來都沒做過什麼跟 Rails 有關的呢？
+
+Why haven't you yet? Just kidding. That's not a problem at all, we've had a lot of coaches just like you and they were *super awesome*. As long as you're comfortable with any other similar framework, you'll be fine. Take a look at the [basic app guide][app] and you'll probably be able to figure out what's going on pretty soon. Pay attention to the "**Coach**" bits that tell you what you should be able to explain.
+
+Usually there'll be at least somebody at the event who works with Rails on a regular basis, so don't be afraid to ask for help when bundle installs go all weird on you. Also, if you come across something unusual, just Google it with your group! It's ok to admit that you don't know everything and show the girls how you use Google to solve your everyday programming dilemmas.
+
+### 當教練究竟要做什麼？
+
+The structure of workshop varies a bit from city to city, so your local organizer group will be able you to guide you through the details. Usually there's a pre-event meeting or dinner with coaches where you can ask all you questions.
+
+### 回答問題
+
+Often coaches who are just one step ahead of attendees are the best at explaining :) Use real life metaphors and explain very high-level. Explaining too deep will cause a flood of information that is not necessary at the beginning.
+
+#### 安裝派對
+
+Generally speaking, the Rails Girls workshops begin with an Installation party during which you'll be asked to help girls [install the required software][install] (Rails and a text editor). You don't have to be an expert on all operating systems, but you can help on those you are familiar with.
+
+#### 幫助女孩打造她們的第一個 app
+
+During the following day, you will be the star of the show and help your group of anywhere from 2 to 5 girls build their first [web app][app] in Rails with the help of the tutorial. Usually that happens just after the initial batch of lectures sometime after 11 AM (aka they'll serve you coffee first).
+
+Going through the tutorial on your own at home will usually be all the preparation you need. The girls will have the app guide open on their screens, so just guide them through the process, providing explanations of what's going on at each step. The explanations shouldn't be highly technical; try to simplify the answer by providing easy to remember metaphors. And remember that there is no such thing as a stupid question at a Rails Girls workshop! Let girls know they can ask you about anything along the way; you can spend more time on parts they find more interesting.
+
+Also, don't be discouraged if you'll sometimes need to try a few different explanations. Most girls will be beginners, so they won't have many existing points of reference (bonus point: nor will they have any bad habits some programmers tend to pick up along the way). If you get to the end of the basic app tutorial, you can explore additional guides at the end or work on whatever your group is most interested in; design is usually a popular choice, but some girls will want to try building another app. You can also prepare your own challenges for girls or explore helpful resources (documentation etc).
+
+If you need help with anything, don't be afraid to use Google or ask another coach to help you out. And don't be afraid to ask for a break if you need it, it's going to be a long day, but we can promise you'll get home with a big smile and a warm heart :)
+
+* Check Lucy Bain's additional [teaching notes to the app](https://github.com/lbain/railsgirls)
+
+### 你願意參加嗎？
+
+很好，很高興你加入我們！與當地活動的主辦者聯絡，你有任何其他的問題，他們會回答你。通常在活動頁面上可以找到他們的聯絡方式。
+
+如果你正好在舉辦 Rails Girls 工作坊的時候，到某個城市旅行，儘管聯絡當地的主辦者；我們歡迎額外的教練！更不用說 Rails Girls 工作坊是一個造訪新城市的好理由 ; )
+
+從其他 Rails Girls 教練的第一手建議：
+
+- [4 lessons learned from teaching at Rails Girls Berlin](http://pragtob.wordpress.com/2012/08/14/4-lessons-learned-from-teaching-at-rails-girls-berlin/)
+- [I infiltrated #railsgirlslj, here’s what it was like](http://swizec.com/blog/i-infiltrated-railsgirlsj-heres-what-it-was-like/swizec/5717)
+- [8 ways to enable workshop attendess to keep learning](http://pragtob.wordpress.com/2013/06/14/8-ways-to-enable-workshop-attendess-to-keep-learning/)
+- [What I learned learning Rails / becoming a better teacher](http://floordrees.tumblr.com/post/58784746482/what-i-learned-learning-rails-becoming-a-better)
+
+[app]: http://guides.railsgirls.tw/app
+[install]: http://guides.railsgirls.tw/install/
+

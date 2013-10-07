@@ -1,0 +1,162 @@
+---
+layout: default
+title: Rails Girls 與 Heroku
+permalink: heroku
+---
+
+# 讓 App 在 Heroku 上線
+
+*Created by Terence Lee, [@hone02](https://twitter.com/hone02)*
+
+*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+
+### 取得 Heroku
+
+按照 [Heroku 官方的快速指南](https://devcenter.heroku.com/articles/quickstart)的步驟 1 至步驟 3，來註冊、安裝工具包並登入。
+
+__教練__： 講解將 app 佈署到 Heroku，跟傳統自己架伺服器比起來，有什麼好處。
+
+### 準備妳的 app
+
+#### 版本管理系統
+
+需要將我們的程式加到版本管理。妳可以透過在終端裡執行以下命令來達成：
+
+{% highlight sh %}
+git init
+echo "public/uploads" >> .gitignore
+echo "tmp" >> .gitignore
+echo "logs" >> .gitignore
+git add .
+git commit -m "initial commit"
+{% endhighlight %}
+
+__教練__：講解版本管理系統的好時機。順便解釋 .gitignore 以及為什麼我們不想要有些檔案被傳上去。
+
+#### 更新我們的資料庫
+
+首先，我們需要讓資料庫在 Heroku 跑起來。Heroku 使用不同於 Rails 預設的資料庫。請加入下列內容至 Gemfile：
+
+{% highlight ruby %}
+gem 'sqlite3'
+{% endhighlight %}
+
+改為
+
+{% highlight ruby %}
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
+{% endhighlight %}
+
+執行 `bundle install --without production` 命令來解決軟體相依問題。
+
+__教練__： 可以講講 RDBMS 以及 pg 與 sqlite 的差別，請講點 Heroku 的 PostgreSQL 軟體相依細節。
+
+#### Adding rails\_12factor
+
+接著，需要在 Gemfile 加入 rails\_12factor，讓我們的 app 可以出現在 Heroku。
+
+這個 Gem 幫妳 Rails 調整成適合在 Heroku 工作的模式，舉例來說，記錄檔存放的地方、靜態檔案的設定（圖片、樣式表以及 JavaScript 檔案）會設定成適合 Heroku 系統的設定。
+
+請將 Gemfile 的下面內容：
+
+Please change the following in the Gemfile:
+
+{% highlight ruby %}
+group :production do
+  gem 'pg'
+end
+{% endhighlight %}
+
+改為
+
+{% highlight ruby %}
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+{% endhighlight %}
+
+修改好之後執行 `bundle`，接著將 Gemfile.lock 提交到妳的程式碼倉庫 (repository)：
+
+{% highlight sh %}
+git commit -a -m "Added rails\_12factor gem and updated Gemfile.lock"
+{% endhighlight %}
+
+__教練__: 可以說說 Heroku 的記錄檔怎麼用，或是其它相關的東西。
+
+### 佈署妳的 app
+
+#### 產生 App
+
+需要在終端裡輸入 `heroku create` 來產生 Heroku app，妳會看到像是下面的訊息：
+
+{% highlight sh %}
+Creating evening-sky-7498... done, stack is cedar
+http://evening-sky-7498.herokuapp.com/ | git@heroku.com:evening-sky-7498.git
+Git remote heroku added
+{% endhighlight %}
+
+這個情況裡，"evening-sky-7498" 便是妳 app 的名稱。
+
+#### 上傳程式碼
+
+接著需要將程式碼上傳至 Heroku，輸入 `git push heroku master`。妳會看到像是下面的輸出：
+
+{% highlight sh %}
+Counting objects: 134, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (115/115), done.
+Writing objects: 100% (134/134), 35.29 KiB, done.
+Total 134 (delta 26), reused 0 (delta 0)
+
+-----> Heroku receiving push
+-----> Ruby/Rails app detected
+-----> Installing dependencies using Bundler version 1.1.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs bin/ --deployment
+       Fetching gem metadata from https://rubygems.org/.......
+...
+-----> Launching... done, v4
+       http://evening-sky-7498.herokuapp.com deployed to Heroku
+{% endhighlight %}
+
+看到 "Launching..." 的訊息表示 app 已經上傳完畢了。
+
+#### 資料庫遷移
+
+接著需要遷移資料庫，跟我們在工作坊裡在自己電腦上做的一樣： `heroku run rake db:migrate`。
+
+
+當這條命令執行完畢時，妳可以用產生出來的網址訪問妳的 app，可以打開這個頁面 [http://evening-sky-7498.herokuapp.com/](http://evening-sky-7498.herokuapp.com/) 看看。也可以在終端裡輸入 `heroku open` 來開啟網頁。
+
+#### 結束記
+
+沒有某些東西便沒有 Heroku 平台。跑在 Heroku 上的應用程式都是放在一個叫做 ephermeral 的環境裡 ─ 這代表任何由妳的 app 建立的檔案（除了存在資料庫的資訊），在環境重新啟動後就會消失（比如妳 push 一個新版 app）。
+
+###### [Ephemeral 檔案系統](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem)
+
+> 每個 dyno 都有自己的 ephemeral 檔案系統，裡面有最新一份佈署上去的程式。在 dyno 的生命期裡，執行中的進程可以把這個檔案系統當成草稿板，但沒有檔案會寫進去。當 dyno 被停止或重新啟動的時候，所有檔案都會被丟棄。
+
+在 [App](/app) 教學裡，新增 idea 時能上傳圖片，也就是將圖片寫到 app 的 `public/uploads` 資料夾。Ephemeral storage 上面所說的功能，可以用下列步驟重現出來：
+
+1. 用 `heroku open` 啟動 app
+2. 加入新的 idea 以及圖片
+3. 用 `heroku restart` 重新啟動 app，
+4. 回到 idea 頁面並重新整理，圖片應該不見了。
+
+##### Ephemeral Storage 的解決辦法
+
+當然妳在跑實際應用的時候，這不是很有用。但事情總是有解決辦法，下面是許多知名網站的解決辦法。
+
+最常見的方法是用像是外部的 asset 代管，像是 Amazon S3 (Simple Storage Service)，或是 Rackspace CloudFiles。這些服務（便宜，每 GB $0.10）提供雲儲存服務，讓可以有持久化儲存（不會消失）。
+
+這個功能有點超出本教學的範圍，這裡有更多資源，妳可以找到妳自己的解決辦法：
+
+* [How to: Make Carrierwave work on Heroku](https://github.com/carrierwaveuploader/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku)
+* [Amazon S3 - 初心者指南](http://www.hongkiat.com/blog/amazon-s3-the-beginners-guide/)
+
+一如往常，如果妳需要更多資訊或協助，教練會幫妳。
