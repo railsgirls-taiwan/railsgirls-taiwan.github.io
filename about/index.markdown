@@ -21,4 +21,4 @@ Find a bug? Please open a ticket at
 our [issue tracker](https://github.com/railsgirls-tw/railsgirls-tw.github.io/issues)
 <br/>
 <br/>
-Thank you! <3 <3 <3
+Thank you! 
