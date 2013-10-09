@@ -3,7 +3,7 @@ auto:        true
 lsi:         false
 server_port: 4000
 pygments:    true
-markdown:    maruku
+markdown:    redcarpet
 permalink:   pretty
 maruku:
   use_tex:    false
