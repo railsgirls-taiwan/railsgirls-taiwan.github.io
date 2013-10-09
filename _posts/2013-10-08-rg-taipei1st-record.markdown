@@ -5,18 +5,15 @@ category:
 tags: []
 ---
 
-### 紀錄片(由OpenFoundry製作)
+## 紀錄片(由OpenFoundry製作)
 
 <center>
 <iframe width="640" height="480" src="//www.youtube.com/embed/9jZTbqokELM" frameborder="0" allowfullscreen></iframe>
 </center>
 
-### 相簿
-<br/>
+## 相簿
 [Flickr Photo Stream](http://www.flickr.com/photos/101459721@N04/sets/72157635423700583/)
-<br/><br/>
-### 學員與教練心得
-<br/>
+## 學員與教練心得
 
 *  [Rails Girls 小筆記](http://lilith.calepin.co/rails-girls.html)
 *  [Rails Girls #01: Say Hello to Rails, Girls :>](http://carolhsu.github.io/blog/2013/09/12/railsgirls-01/)
@@ -24,7 +21,6 @@ tags: []
 *  [我的Rails Girls 初體驗](http://www.porsh.idv.tw/archives/386)
 *  [社群的力量 - Rails Girls Taipei 舉辦心得](http://www.openfoundry.org/tw/foss-forum/9076-power-of-community-rails-girls-taipei)
 
-### 媒體報導
-<br/>
+## 媒體報導
 
 *  [T客邦](http://www.techbang.com/posts/14888-happy-girls-can-also-write-programs-interview-with-rails-sponsored-girls-team)

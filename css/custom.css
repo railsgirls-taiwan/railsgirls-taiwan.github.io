@@ -255,7 +255,7 @@ footer a {
 .posts h1.title {
     color: #D53C2E;
     display: block;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 120%;
     margin: 0px 0 0.3em 0;
 }
@@ -263,10 +263,10 @@ footer a {
 #aside {
     color: #999;
     float: left;
-    font: bold 0.875em "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font: 0.875em "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 20px;
     padding-right: 10px;
-    padding-top: 10px;
+    padding-top: 5px;
     width: 150px;
     margin-left: 30px;
 }
@@ -313,5 +313,10 @@ div.post_content p {
     font-size: 18px;
     font: "Palatino", "Times New Roman", Times, serif;
     margin-bottom: 0;
+    line-height: 27px
+}
+
+.post_content h2 {
+  font-size: 22px
 }
 
