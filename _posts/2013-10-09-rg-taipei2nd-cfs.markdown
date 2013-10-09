@@ -47,4 +47,8 @@ Rails Girls 社群為Linda Liukas 與 Karri Saarinen 創辦，以「幫助女生
 	*  金額不限
 	*  不開發票
 	
+<br/>
+
+有意贊助者請mail至 <contact@railsgirls.tw>, 或聯絡我們的粉絲團：<https://www.facebook.com/railsgirlstw>
+	
 
