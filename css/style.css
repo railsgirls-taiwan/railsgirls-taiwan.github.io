@@ -57,6 +57,11 @@ a {
   color: #E0330C;
 }
 
+nav a:hover{
+  color: #FFFFCC;
+  text-decoration: underline;
+}
+
 a:hover {
   color: #E0330C;
   text-decoration: underline;
