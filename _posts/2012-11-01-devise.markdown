@@ -12,7 +12,9 @@ permalink: devise
 
 *Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-**本指南假設妳已經跟著[app 開發指南](/app)做好了一個 RailsGirls 應用**。
+*Updated by Tony Jian, [@tonytonyjan](https://plurk.com/tonytonyjan)*
+
+**本指南假設妳已經跟著 [app 開發指南](/app)做好了一個 RailsGirls 應用**。
 
 ## 步驟零： 加入 devise gem
 
@@ -28,33 +30,25 @@ gem 'devise'
 bundle install
 {% endhighlight %}
 
-來安裝 devise gem。 **記得重新啟動 Rails 伺服器**。
+如此 devise gem 就安裝完成了。 **記得重新啟動 Rails 伺服器**。
 
 ## 步驟一：幫 app 設定好 devise
 
-在終端裡執行以下命令。
+在終端裡執行以下命令：
 
 {% highlight sh %}
-rails g devise:install
-{% endhighlight %}
-
-接著打開 `app/models/user.rb` 加入這行：
-
-{% highlight ruby %}
-attr_accessible :email, :password, :password_confirmation
+rails generate devise:install
 {% endhighlight %}
 
 ## 步驟二：設定 Devise
 
-確定妳的環境檔案已定義預設網址，打開 `config/environments/development.rb` 並加入：
+確定妳的環境檔案已定義預設網址，打開 `config/environments/development.rb` ，在檔末找到 `end` 關鍵字，並在其上方加入：
 
 {% highlight ruby %}
 config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 {% endhighlight %}
 
-這行放在 `end` 關鍵字之前哦
-
-打開 `app/views/layouts/application.html.erb` 並加入：
+打開 `app/views/layouts/application.html.erb`，找到 `<%= yield %>`，並在其上方加入：
 
 {% highlight erb %}
 <% if notice %>
@@ -65,19 +59,11 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 <% end %>
 {% endhighlight %}
 
-加在這行上面
-
-{% highlight ruby %}
-<%= yield %>
-{% endhighlight %}
-
-最後，如果妳預計要[佈署到 Heroku](/heroku)，打開 `config/application.rb` 並加入這行：
+最後，如果妳預計要[佈署到 Heroku](/heroku)，打開 `config/application.rb`，在檔末找到兩個 `end` 關鍵字，並在其上方加入：
 
 {% highlight ruby %}
 config.assets.initialize_on_precompile = false
 {% endhighlight %}
-
-從最下面數來第三行，加在兩個 `end` 關鍵字的上面。
 
 ## 步驟三：設定 User 模型
 
