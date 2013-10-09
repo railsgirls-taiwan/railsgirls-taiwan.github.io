@@ -36,27 +36,27 @@ We offer the following sponsorship packages:
 
 1.  Silver Sponsor $30,000 NTD
 
-＊ 5-minutes Lightning Talk
-＊ Company name and logo on the website.
-＊ Company write-up on the website (200 words).
-＊ Company poster at workshop.
-＊ Company souvenir at workshop.
-＊ Display sponsor logo during breaks.
+* 5-minutes Lightning Talk.
+* Company name and logo on the website.
+* Company write-up on the website (200 words).
+* Company poster at workshop.
+* Company souvenir at workshop.
+* Display sponsor logo during breaks.
 
 2.  Bronze Sponsor $15,000 NTD
 
-＊ Company name and logo on the website.
-＊ Company write-up on the website (150 words).
-＊ Company poster at workshop.
-＊ Company souvenir at workshop.
-＊ Display sponsor logo during breaks.
+* Company name and logo on the website.
+* Company write-up on the website (150 words).
+* Company poster at workshop.
+* Company souvenir at workshop.
+* Display sponsor logo during breaks.
 
 3.  Supporter Sponsor $10,000 NTD
 
-＊ Company name and logo on the website.
+* Company name and logo on the website.
 
 4.  Individual Sponsor $1000
 
-＊ Name on the website.
+* Name on the website.
 
 If you have any questions or interested in sponsorship, please email to <contact@railsgirls.tw> or contact us directly at [our facebook fans page](https://www.facebook.com/railsgirlstw).
