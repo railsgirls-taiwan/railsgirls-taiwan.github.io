@@ -32,6 +32,8 @@ bundle install
 rails g scaffold comment user_name:string body:text idea_id:integer
 {% endhighlight %}
 
+> `rails g` 是 `rails generate` 的縮寫
+
 ## Step 3: 加入 foreign key 連結
 
 找到這個檔案 `db/migrate/YYYYMMDDXXXXXX_create_comments.rb` ，在這行之後
