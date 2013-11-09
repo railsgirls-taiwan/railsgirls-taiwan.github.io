@@ -12,7 +12,7 @@ permalink: commenting
 
 ## Step 1: 加入 foreigner gem
 
-加入 Gemfile
+打開 Gemfile，加入：
 
 {% highlight ruby %}
 gem 'foreigner'
