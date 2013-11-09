@@ -337,8 +337,6 @@ class Idea < ActiveRecord::Base
 root :to => redirect('/ideas')
 {% endhighlight %}
 
-將 `public/` 目錄下的 `index.html` 刪除。
-
 用瀏覽器打開網站的根目錄 (root path，也就是 http://localhost:3000/)，看看有沒有改變。
 
 **教練：** 講解路由，包含路由順序以及路由與靜態檔案的關係。
