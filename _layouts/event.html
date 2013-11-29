@@ -1,26 +1,53 @@
-<link href="/css/custom.css" rel="stylesheet"/>
+<link href="/css/960.css" rel="stylesheet"/>
+<style type="text/css">
+	.event {
+	  box-shadow:0 2px 3px #ddd;
+	  border:1px solid #eee;
+	  height:200px;
+	  background-position:0 -100px;
+	  margin-bottom:40px;
+	  -webkit-transition:0.4s box-shadow;
+	}
+
+	.event:hover {
+	  -webkit-transition:0.4s all;
+	  box-shadow:0 2px 3px #999;
+	  border-color: #ddd;
+	}
+
+	.event.tba {
+	  box-shadow:none;
+	  border:1px solid #eee;
+	}
+
+	.event.tba h3 {
+	  color:#888;
+	  border-color:#888;
+	}
+
+	.event.tba h3 small {
+	  color:#888;
+	}
+
+	.event h3 {
+	  margin-top:129px;
+	  padding:10px 15px;
+	  background:#fff;
+	  border-top:3px solid #d3360b;
+	}
+
+	.event h3 small {
+	  line-height:1.5;
+	  display:block;
+	  font-size:80%;
+	  color:#000;
+	  font-weight:400;
+	}
+</style>
 {% include header.html %}
-<article class="container">
-  <div class="main">
-    <ol class="posts">
-      <h1 class="title">活動</h1>
-      {% for post in site.posts limit:50 %}
-      {% if post.description == "event" %}
-      <li>
-        <div id="aside">
-          <span>
-            <img src="/images/star-red.png" alt="★" />
-            <img src="/images/star-red.png" alt="★" />
-            <img src="/images/star-red.png" alt="★" />
-          </span>
-        </div>
-        <div class="post_content">
-          <p>{{ post.content }}</p>
-        </div>
-      </li>
-      {% endif %}
-      {% endfor %}
-    </ol>
-  </div>
-</article>
+    <article class="container">
+      <div class="span10">
+        {{ content }}
+      </div>
+    </article>
 {% include footer.html %}
