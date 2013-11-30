@@ -35,7 +35,7 @@ permalink: app
 
 針對妳的作業系統選對的步驟很重要 —— 在 Windows 執行的命令跟 Mac 與 Linux 上的不太一樣。如果妳遇到任何問題，命令最下方可切換作業系統。
 
-## *1.* 建立 APP
+## Step 1. 建立 APP
 
 我們即將建立一個嶄新的 Rails APP，叫做 *railsgirls*。
 
@@ -43,7 +43,7 @@ permalink: app
 
 * Mac OS X: 打開 Spotlight，輸入 *Terminal* 並點選 *Terminal* 。
 * Windows: 按開始，找到**命令提示字元**，接著按 *Command Prompt with Ruby on Rails*。
-* Linux (Ubuntu): 在 dash 搜索 *Terminal* 並點選 *Terminal*。
+* Linux (Ubuntu/Fedora): 在 dash 搜索 *Terminal* 並點選 *Terminal*。
 
 接著，輸入下面的命令到終端：
 
@@ -150,8 +150,7 @@ ruby bin\rails server
 
 **教練：** 解釋每個命令用來在做什麼。產生了什麼檔案？伺服器的功用？
 
-
-## *2.* 建立 Idea 鷹架
+## Step 2. 建立 Idea 鷹架
 
 我們即將使用 Rails 內建的鷹架功能來起步。讓我們可以： __列出、新增、移除、編輯、檢視想法。__
 
@@ -161,6 +160,21 @@ ruby bin\rails server
   <div class="nix">
 {% highlight sh %}
 rails generate scaffold idea name:string description:text picture:string
+{% endhighlight %}
+  </div>
+
+  <div class="win">
+{% highlight sh %}
+rails generate scaffold idea name:string description:text picture:string
+{% endhighlight %}
+  </div>
+</div>
+
+鷹架在專案目錄下建立了一些新檔案，要讓這些檔案生效，需要執行一些指令，來更新資料庫、並重新啟動伺服器。
+
+<div class="os-specific">
+  <div class="nix">
+{% highlight sh %}
 rake db:migrate
 rails server
 {% endhighlight %}
@@ -168,7 +182,6 @@ rails server
 
   <div class="win">
 {% highlight sh %}
-rails generate scaffold idea name:string description:text picture:string
 rake db:migrate
 ruby bin\rails server
 {% endhighlight %}
@@ -179,8 +192,7 @@ ruby bin\rails server
 
 玩了一陣子之後，按 `CTRL-C` 來再次離開伺服器。
 
-
-## *3.* 設計
+## Step 3. 設計
 
 **教練：** 講講 Rails 與 HTML 之間的關係。Views 裡面哪個部分是 HTML？哪個部分是嵌入 Ruby (ERB)？MVC 是什麼？與它們有什麼關係？（模型與控制器負責產生 HTML Views）
 
@@ -246,7 +258,7 @@ table, td, th { vertical-align: middle !important; border: none !important; }
 th { border-bottom: 1px solid #DDD !important; }
 {% endhighlight %}
 
-現在確保妳已存檔，並將瀏覽器重新整理，來看看什麼被改變了。妳也可以繼續調整 HTML 與 CSS。
+修改過後記得存檔，並重新整理瀏覽器，來看看什麼被改變了。妳也可以繼續調整 HTML 與 CSS。
 
 **教練：** 稍微講講 CSS 與 layout。
 
@@ -274,13 +286,13 @@ gem 'carrierwave'
 bundle
 {% endhighlight %}
 
-現在我們可以來產生處理上傳的程式碼。在終端裡，執行：
+現在我們可以來產生處理上傳的相關程式。在終端裡，執行：
 
 {% highlight sh %}
 rails generate uploader Picture
 {% endhighlight %}
 
-現在妳需要在終端裡 **重新啟動 Rails 伺服器的進程**。
+現在妳需要在終端裡 **重新啟動 Rails 伺服器**。
 
 在終端裡按下 `CTRL-C` 來離開伺服器。一旦伺服器停止，妳可以按上，來獲得上個輸入的命令，接著按 enter 來重新啟動伺服器。
 
@@ -342,6 +354,23 @@ root :to => redirect('/ideas')
 
 **教練：** 講解路由，包含路由順序以及路由與靜態檔案的關係。
 
+## Create static page in your app
+
+Lets add a static page to our app that will hold information about the author of this application — you!
+
+{% highlight sh %}
+rails generate controller pages info
+{% endhighlight %}
+
+This command will create you a new folder under `/views` called `/pages` and under that a file called `info.html.erb` which will be your info page.
+
+It also adds a new simple route to your routes.rb.
+
+{% highlight ruby %}
+get "pages/info"
+{% endhighlight %}
+
+Now you can open the file `/views/pages/info.html.erb` and add information about you in HTML and then take your browser to [http://localhost:3000/pages/info](http://localhost:3000/pages/info) to see your new info page.
 
 ## 下一步？
 
