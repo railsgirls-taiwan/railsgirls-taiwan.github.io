@@ -28,20 +28,6 @@ permalink: design
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
 {% endhighlight %}
 
-並把
-
-{% highlight html %}
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-{% endhighlight %}
-
-用這個換掉
-
-{% highlight html %}
-<div class="topbar">
-  <div class="fill">
-{% endhighlight %}
-
 開啟 `app/assets/stylesheets/application.css`，把這行
 
 {% highlight html %}
