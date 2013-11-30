@@ -10,7 +10,7 @@ permalink: app
 
 *Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-**確定妳已安裝好 Rails**，尚未安裝請參考[**安裝指南**](/install)。
+**確定電腦已經安裝了 Rails**，尚未安裝請參考[**安裝指南**](/install)。
 
 ## 認識工具
 
@@ -18,6 +18,7 @@ permalink: app
 
 <h3><i class="icon-text-editor">&nbsp;</i></h3>
 ### 編輯器
+
 [Sublime Text](http://www.sublimetext.com)、[Komodo Edit](http://www.activestate.com/komodo-edit)、Vim、Emacs 以及 Gedit 都是妳可以用來寫程式及編輯檔案的編輯器。
 
 <h3><i class="icon-prompt">&nbsp;</i></h3>
@@ -26,7 +27,7 @@ permalink: app
 
 <h3><i class="icon-browser">&nbsp;</i></h3>
 ### 網路瀏覽器
-(火狐, Safari, Chrome) 用來檢視妳的 APP。
+(火狐、Safari、Chrome) 用來檢視妳的 APP。
 
 </div>
 
