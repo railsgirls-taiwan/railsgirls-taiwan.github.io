@@ -354,23 +354,28 @@ root :to => redirect('/ideas')
 
 **教練：** 講解路由，包含路由順序以及路由與靜態檔案的關係。
 
-## Create static page in your app
+## 建立靜態頁面
 
-Lets add a static page to our app that will hold information about the author of this application — you!
+
+讓我們來添加一頁靜態頁面吧，列出這個 app 的作者是誰 —— 也就是妳！：）
 
 {% highlight sh %}
 rails generate controller pages info
 {% endhighlight %}
 
-This command will create you a new folder under `/views` called `/pages` and under that a file called `info.html.erb` which will be your info page.
+這個指令會在 `app/views` 資料夾下，新建一個新資料夾叫做 `/pages`，並有一個檔案叫做 `info.html.erb`，這頁便是妳的作者頁面摟。
 
-It also adds a new simple route to your routes.rb.
+剛剛的指令也幫妳加入了一條路由到 `config/routes.rb`：
 
 {% highlight ruby %}
 get "pages/info"
 {% endhighlight %}
 
-Now you can open the file `/views/pages/info.html.erb` and add information about you in HTML and then take your browser to [http://localhost:3000/pages/info](http://localhost:3000/pages/info) to see your new info page.
+現在打開 `app/views/pages/info.html.erb`，並填入一些 HTML，接著打開這頁：
+
+[http://localhost:3000/pages/info](http://localhost:3000/pages/info)
+
+看看妳新增的作者頁面。
 
 ## 下一步？
 
