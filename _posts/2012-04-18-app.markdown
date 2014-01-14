@@ -10,7 +10,7 @@ permalink: app
 
 *Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-**確定電腦已經安裝了 Rails**，尚未安裝請參考[**安裝指南**](/install)。
+**確認電腦已安裝 Rails**，尚未安裝請參考[**安裝指南**](/install)。
 
 ## 認識工具
 
@@ -54,7 +54,7 @@ mkdir projects
 {% endhighlight %}
 
     <div>
-可以用 <code>ls</code> 命令來檢查叫做 <code>projects</code> 的目錄有沒有產生。應該會在輸出裡看到 <code>projects</code> 目錄。現在你想從當下目錄進入 <code>projects</code> 目錄，可以執行：
+可以用 <code>ls</code> 命令來檢查叫做 <code>projects</code> 的資料夾有沒有產生。應該會在輸出裡看到 <code>projects</code> 資料夾。現在你想從當下資料夾進入 <code>projects</code> 資料夾，可以執行：
     </div>
 
 {% highlight sh %}
@@ -62,7 +62,7 @@ cd projects
 {% endhighlight %}
 
     <div>
-妳可以再次使用 <code>ls</code> 命令來檢查妳現在正在一個空目錄裡。現在妳可以用下面這個命令，來建立一個新的 APP，叫做 <code>railsgirls</code>：
+妳可以再次使用 <code>ls</code> 命令來檢查妳現在正在一個空資料夾裡。現在妳可以用下面這個命令，來建立一個新的 APP，叫做 <code>railsgirls</code>：
     </div>
 
 {% highlight sh %}
@@ -70,7 +70,7 @@ rails new railsgirls
 {% endhighlight %}
 
     <div>
-這會在 <code>railsgirls</code> 目錄下建立出一個新的 APP，所以我們可以再次使用 <code>cd</code> 命令切換到 Rails APP 目錄：
+這會在 <code>railsgirls</code> 資料夾下建立出一個新的 APP，所以我們可以再次使用 <code>cd</code> 命令切換到 Rails APP 資料夾：
     </div>
 
 {% highlight sh %}
@@ -78,7 +78,7 @@ cd railsgirls
 {% endhighlight %}
 
     <div>
-如果妳在這個目錄下執行 <code>ls</code> 命令，妳會看到像是 <code>app</code> 以及 <code>config</code> 這樣的目錄。可以用下面這個命令來啟動 Rails 伺服器：
+如果妳在這個資料夾下執行 <code>ls</code> 命令，妳會看到像是 <code>app</code> 以及 <code>config</code> 這樣的資料夾。可以用下面這個命令來啟動 Rails 伺服器：
     </div>
 
 {% highlight sh %}
@@ -92,7 +92,7 @@ mkdir projects
 {% endhighlight %}
 
     <div>
-可以用 <code>dir</code> 命令來檢查叫做 <code>projects</code> 的目錄有沒有產生。應該會在輸出裡看到 <code>projects</code> 目錄。現在你想從目前的目錄進入 <code>projects</code> 目錄，可以執行：
+可以用 <code>dir</code> 命令來檢查叫做 <code>projects</code> 的資料夾有沒有產生。應該會在輸出裡看到 <code>projects</code> 資料夾。現在你想從目前的資料夾進入 <code>projects</code> 資料夾，可以執行：
     </div>
 
 {% highlight sh %}
@@ -100,7 +100,7 @@ cd projects
 {% endhighlight %}
 
     <div>
-妳可以再次使用 <code>ls</code> 命令來檢查妳現在正在一個空目錄裡。現在妳可以用下面這個命令，來建立一個新的 APP，叫做 <code>railsgirls</code>：
+妳可以再次使用 <code>ls</code> 命令來檢查妳現在正在一個空資料夾裡。現在妳可以用下面這個命令，來建立一個新的 APP，叫做 <code>railsgirls</code>：
     </div>
 
 {% highlight sh %}
@@ -108,7 +108,7 @@ rails new railsgirls
 {% endhighlight %}
 
     <div>
-這會在 <code>railsgirls</code> 目錄下建立出一個新的 APP，所以我們可以再次使用 <code>cd</code> 命令切換到 Rails APP 目錄：
+這會在 <code>railsgirls</code> 資料夾下建立出一個新的 APP，所以我們可以再次使用 <code>cd</code> 命令切換到 Rails APP 資料夾：
     </div>
 
 {% highlight sh %}
@@ -116,7 +116,7 @@ cd railsgirls
 {% endhighlight %}
 
     <div>
-如果妳在這個目錄下執行 <code>dir</code> 命令，妳會看到像是 <code>app</code> 以及 <code>config</code> 這樣的目錄。可以用下面這個命令來啟動 Rails 伺服器：
+如果妳在這個資料夾下執行 <code>dir</code> 命令，妳會看到像是 <code>app</code> 以及 <code>config</code> 這樣的資料夾。可以用下面這個命令來啟動 Rails 伺服器：
     </div>
 
 {% highlight sh %}
@@ -170,7 +170,7 @@ rails generate scaffold idea name:string description:text picture:string
   </div>
 </div>
 
-鷹架在專案目錄下建立了一些新檔案，要讓這些檔案生效，需要執行一些指令，來更新資料庫、並重新啟動伺服器。
+鷹架在專案資料夾下建立了一些新檔案，要讓這些檔案生效，需要執行一些指令，來更新資料庫、並重新啟動伺服器。
 
 <div class="os-specific">
   <div class="nix">
@@ -207,7 +207,8 @@ ruby bin\rails server
 在這行上面加入
 
 {% highlight erb %}
-<link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
+<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
+<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" />
 {% endhighlight %}
 
 並將這行換成
@@ -227,16 +228,24 @@ ruby bin\rails server
 讓我們也加入導覽條與 footer 到頁面吧。在同一個檔案裡，`<body>` 標籤下面，加入
 
 {% highlight html %}
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="/">The Idea app</a>
-      <ul class="nav">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">The Idea app</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
         <li class="active"><a href="/ideas">Ideas</a></li>
       </ul>
     </div>
   </div>
-</div>
+</nav>
 {% endhighlight %}
 
 以及在  `</body>` 之前，加入
@@ -244,9 +253,10 @@ ruby bin\rails server
 {% highlight html %}
 <footer>
   <div class="container">
-    Rails Girls 2013
+    Rails Girls 2014
   </div>
 </footer>
+<script src="//railsgirls.com/assets/bootstrap.js"></script>
 {% endhighlight %}
 
 現在讓我們也來變一下 ideas 表格的風格。打開 `app/assets/stylesheets/application.css` 到最下面加入
@@ -266,7 +276,7 @@ th { border-bottom: 1px solid #DDD !important; }
 
 我們需要安裝一點軟體，讓我們可以在 Rails 裡上傳檔案。
 
-在專案目錄下，用編輯器打開 `Gemfile`，找到這行，在這行下面：
+在專案資料夾下，用編輯器打開 `Gemfile`，找到這行，在這行下面：
 
 {% highlight ruby %}
 gem 'sqlite3'
