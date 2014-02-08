@@ -6,7 +6,7 @@ tags: [call_for_sponsor]
 ---
 #第三屆Rails Girls Taipei徵求贊助商
 
-####大家好，我們正在籌辦2014年度第一次，也是第三屆的Rails Girls Taipei活動，2014年我們將有全新的贊助內容
+####大家好，我們預計將於2014年3月舉辦2014年度第一次，也是第三屆的Rails Girls Taipei活動，目前正在徵求贊助商。
 
 ### 關於Rails Girls活動
 Rails Girls 是一個為期2天，非營利，引導各年齡層的女性學習軟體/程式工具與製作網站程式的工作坊，並藉此幫助女性達成自身的目標。
