@@ -1,32 +1,20 @@
 ---
 layout: default
-title: 給 Rails Girls 應用加入評論功能
+title: 給 Rails Girls 應用加入留言功能
 permalink: commenting
 ---
 
-# Rails Girls App 評論功能
+# Rails Girls App 留言功能
 
 *Created by Janika Liiv, [@janikaliiv](https://twitter.com/janikaliiv)*
 
-替妳的 **railsgirls** app 加入評論功能。
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-## Step 1: 加入 foreigner gem
+替妳的 **railsgirls** app 加入留言功能。
 
-打開 Gemfile，加入：
+##*1.*建立 Comment Scaffold
 
-{% highlight ruby %}
-gem 'foreigner'
-{% endhighlight %}
-
-安裝相依套件（如果伺服器正在跑，按 `CTRL-C` 停止。）
-
-{% highlight sh %}
-bundle install
-{% endhighlight %}
-
-## Step 2: 建立 comment 鷹架
-
-建立 comment 鷹架，有評論者的姓名（user_name）、評論內容（body）以及評論哪個 idea （idea_id）。
+建立 Comment Scaffold，有留言者的姓名（user_name）、留言內容（body）以及給哪個 idea 留言（idea_id）。
 
 {% highlight sh %}
 rails g scaffold comment user_name:string body:text idea_id:integer
@@ -34,40 +22,9 @@ rails g scaffold comment user_name:string body:text idea_id:integer
 
 > `rails g` 是 `rails generate` 的縮寫
 
-## Step 3: 加入 foreign key 連結
+##*2.*建立 Model 的 Relation
 
-找到這個檔案 `db/migrate/YYYYMMDDXXXXXX_create_comments.rb` ，在這行之後
-
-{% highlight ruby %}
-t.timestamps
-end
-{% endhighlight %}
-
-加入
-
-{% highlight ruby %}
-add_foreign_key :comments, :ideas
-{% endhighlight %}
-
-現在給資料庫做遷移：
-
-{% highlight sh %}
-rake db:migrate
-{% endhighlight %}
-
-啟動伺服器
-
-{% highlight sh %}
-rails s
-{% endhighlight %}
-
-## Step 4: 加入模型關係
-
-必須讓 Rails 知道 comments 與 idea 之間的關係（ideas 與 comments）。
-
-一個 idea 可以有很多 comments，但我們得告訴 idea model 這件事才行。
-
-打開 app/models/idea.rb 在這行之後
+首先呢要確定 Rails 知道 ideas 與 comments 之間的關係，我們需要建立 Idea 與 Comment Model 之間的關係。一個 idea 可以有很多人留言，讓我們把這個關係加入 Idea Model。打開 `app/models/idea.rb`，在這行的後面：
 
 {% highlight ruby %}
 class Idea < ActiveRecord::Base
@@ -79,7 +36,7 @@ class Idea < ActiveRecord::Base
 has_many :comments
 {% endhighlight %}
 
-也必須告訴 comment 她屬於單一個 idea。打開 app/models/comment.rb，並在這行之後
+一個 comment 也需要知道它自己屬於那個 idea。打開 `app/models/comment.rb`，在這行的後面：
 
 {% highlight ruby %}
 class Comment < ActiveRecord::Base
@@ -91,10 +48,9 @@ class Comment < ActiveRecord::Base
 belongs_to :idea
 {% endhighlight %}
 
-## Step 5: 渲染評論的表格及加入現有評論
+##*3.*加入留言的表單
 
-打開 app/views/ideas/show.html 並在 image_tag 之後
-
+打開 `app/views/ideas/show.html`，並在 `image_tag` 之後
 {% highlight erb %}
 <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
 {% endhighlight %}
@@ -113,14 +69,19 @@ belongs_to :idea
 <%= render 'comments/form' %>
 {% endhighlight %}
 
-在 app/controllers/ideas_controller.rb 將此行加入 show action。
+打開 `app/controllers/ideas_controller.rb` 在 show action 裡面的這行後面
+
+{% highlight ruby %}
+@idea = Idea.find(params[:id])
+{% endhighlight %}
+
+加入
 
 {% highlight ruby %}
 @comment = @idea.comments.build
 {% endhighlight %}
 
-打開 app/views/comments/_form.html 並在這行之後
-
+打開 `app/views/comments/_form.html.erb` 並在這段程式後面：
 {% highlight erb %}
   <div class="field">
     <%= f.label :body %><br />
@@ -134,4 +95,13 @@ belongs_to :idea
 <%= f.hidden_field :idea_id %>
 {% endhighlight %}
 
-完成了！現在進去一個 idea 看看，會看到有添加評論的表單，添加個新的評論看看吧。
+接下來，移除這段程式碼：
+
+{% highlight erb %}
+<div class="field">
+  <%= f.label :idea_id %><br>
+  <%= f.number_field :idea_id %>
+</div>
+{% endhighlight %}
+
+就這麼簡單。現在看看之前建立的 idea，妳應該會看到一個可以留言的表單了。
