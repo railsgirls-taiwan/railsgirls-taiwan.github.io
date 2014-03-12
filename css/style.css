@@ -86,8 +86,11 @@ header #logo {
 }
 
 nav {
-  margin: 0 0 0 250px;
-  padding-top: 12px;
+  margin: 0 0 0 200px;
+  padding-top: 0px;
+  float: right;
+  color: #ffffcc;
+  font-size: 20px;
 }
 
 nav a {
