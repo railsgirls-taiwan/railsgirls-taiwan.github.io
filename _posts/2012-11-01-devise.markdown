@@ -18,10 +18,11 @@ permalink: devise
 
 ##*0.*安裝 devise RubyGem
 
-打開專案的 `Gemfile`，並加入下面這行
+打開專案的 `Gemfile`，並加入下面這兩行
 
 {% highlight ruby %}
 gem 'devise'
+gem 'bcrypt'
 {% endhighlight %}
 
 並在終端機裡輸入
@@ -42,7 +43,7 @@ rails generate devise:install
 
 ##*2.*設定 Devise
 
-devise 需要設定一個東西，打開 `config/environments/development.rb` ，在檔案最後面找到 `end` 關鍵字，並在 `end` 上面加入這行：
+devise 需要設定 mailer 預設的網址選項，打開 `config/environments/development.rb` ，在檔案最後面找到 `end` 關鍵字，並在 `end` 上面加入這行：
 
 {% highlight ruby %}
 config.action_mailer.default_url_options = { host: 'localhost:3000' }
@@ -65,7 +66,7 @@ config.action_mailer.default_url_options = { host: 'localhost:3000' }
 config.assets.initialize_on_precompile = false
 {% endhighlight %}
 
-##*3.*設定 User 模型
+##*3.*設定 User Model
 
 使用 devise 的 generator 來建立出 User Model：
 
@@ -80,7 +81,7 @@ rake db:migrate
 
 現在建立第一個使用者的細節都設定完畢了。devise 幫妳產生了建立帳號、登入、登出所需的程式碼與路徑。
 
-確定 Rails 伺服器有跑起來，打開 [http://localhost:3000/users/sign_up](http://localhost:3000/users/sign_up) 來建立妳的帳號吧。
+重新啟動 Rails 伺服器（CTRL-C + `rails s`），打開 [http://localhost:3000/users/sign_up](http://localhost:3000/users/sign_up) 來建立妳的帳號吧。
 
 ##*5.*加入註冊與登入連結
 
@@ -106,6 +107,7 @@ rake db:migrate
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
+</p>
 {% endhighlight %}
 
 最後，讓使用者必須要登入，不然就跳到登入頁面。打開 `app/controllers/application_controller.rb`，在這行程式碼後面：`protect_from_forgery with: :exception`，新增這一行：
@@ -120,7 +122,7 @@ rake db:migrate
 
 ## 下一步？
 
-* 加入更多欄位到 User 模型
-* 加入 Idea 與 User 模型之間的關係
+* 加入更多欄位到 User Model
+* 加入 Idea 與 User Model之間的關係
 * 限制使用者只能編輯自己的 idea。
 * 使用角色或權限來管理（用一個像是 CanCan 這樣流行的授權 gem）
