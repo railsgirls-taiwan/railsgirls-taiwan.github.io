@@ -58,13 +58,13 @@ end
 
 __教練__： 可以講講 RDBMS 以及 pg 與 sqlite 的差別，請講點 Heroku 的 PostgreSQL 軟體相依細節。
 
-#### Adding rails\_12factor
+#### 安裝 rails_12factor Gem
 
-接下來，需要在 Gemfile 加入 rails\_12factor，讓我們的 app 可以出現在 Heroku。
+接下來，需要在 `Gemfile` 加入 `rails_12factor`，讓我們的 app 可以出現在 Heroku。
 
 這個 Gem 調整妳的 Rails App 成為適合在 Heroku 工作的模式，舉例來說，記錄檔存放的地方、靜態檔案的設定（圖片、樣式表以及 JavaScript 檔案）會設定成適合 Heroku 系統的設定。
 
-請修改 Gemfile 的內容：
+請修改 `Gemfile` 的內容：
 
 將
 
@@ -86,7 +86,7 @@ end
 修改好之後到終端機執行 `bundle` 命令，接著將 `Gemfile.lock` 提交到妳的程式碼倉庫 (repository)：
 
 {% highlight sh %}
-git commit -a -m "Added rails\_12factor gem and updated Gemfile.lock"
+git commit -a -m "Added rails_12factor gem and updated Gemfile.lock"
 {% endhighlight %}
 
 __教練__: 可以說說 Heroku 的記錄檔怎麼用，或是其它相關的東西。
