@@ -8,7 +8,7 @@ permalink: heroku
 
 *Created by Terence Lee, [@hone02](https://twitter.com/hone02)*
 
-*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
 ### 取得 Heroku
 

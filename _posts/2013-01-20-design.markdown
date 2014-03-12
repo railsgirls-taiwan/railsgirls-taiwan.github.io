@@ -8,7 +8,7 @@ permalink: design
 
 *Created by Alex Liao, [@alexliao](http://bannka.com/alex)*
 
-*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
 現在 app 執行的很好，但看起來仍像是用 Scaffold 產生出來的。讓我們加點設計到 app，讓它看起來像專業的網站吧。當妳完成本教學時，妳的 app 看起來會像[這樣](http://railsgirlsapp.herokuapp.com/ideas)。
 

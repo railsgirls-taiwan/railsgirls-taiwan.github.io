@@ -8,7 +8,7 @@ permalink: app
 
 *Created by Vesa Vänskä, [@vesan](https://twitter.com/vesan)*
 
-*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
 **請先確認電腦是不是已經安裝了 Rails**，還沒有安裝的話，請參考[**安裝指南**](/install)。
 
