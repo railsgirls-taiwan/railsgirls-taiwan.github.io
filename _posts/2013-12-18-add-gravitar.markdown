@@ -1,61 +1,85 @@
 ---
 layout: default
-title: Adding Graviatar to you app
+title: 加入個人大頭貼
 permalink: gravatar
 ---
 
-# Adding Gravatar to your App
+# 加入個人大頭貼（Gravatar）
 
 *Created by Catherine Jones*
 
-This guide assumes that you have already built a Rails Girls app by following this [app development guide](http://guides.railsgirls.com/app/) and added authentication using [Devise](http://guides.railsgirls.com/devise/).
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-### Important
+**本指南假設妳已經跟著[打造第一個 APP](/app)指南，寫好了一個 RailsGirls APP，並且已經[用 devise 新增了驗證功能](/devise)**。
 
-You need to have an e-mail address registered with Gravatar for this to work. If you do not already have one you can go to [gravatar.com](http://en.gravatar.com/).
+### 重要！
 
-## *1.*Add the Gravtastic gem
+妳需要去 [Gravatar 網站](https://en.gravatar.com/)，註冊一個 Email。Email 會綁定一張照片。
 
-Open up your gemfile and under your `devise` gem add
+## *1.*安裝 Gravtastic Gem
+
+打開專案的 `Gemfile`，在 `devise` 下面新增：
 
 {% highlight erb %}
 gem 'gravtastic'
 {% endhighlight %}
 
-In the terminal run
+接著到終端機，輸入：
 
 {% highlight sh %}
-bundle install
+bundle
 {% endhighlight %}
 
-This will install the gravtastic gem. Then remember to restart your rails server.
+Gravtastic Gem 就裝好了。記得要重新啟動 Rails 伺服器哦。
 
-## *2.*Set up Gravatar in your app
+## *2.*設定 Gravtastic
 
-Run the following command in your terminal:
+打開 `app/models/user.rb` 加入這兩行
 
 {% highlight sh %}
-rails g gravtastic:install
+include Gravtastic
+gravtastic
 {% endhighlight %}
 
-## *3.* Configure Gravatar
+這樣子 Gravtastic 就設定好了！
 
-Open `app/views/layouts/application.html.erb` and in the
+## *3.*設定 Gravatar 的 HTML 與 CSS
+
+打開 `app/views/layouts/application.html.erb` 並找到這一段
 
 {% highlight erb %}
 <% if user_signed_in? %>
 {% endhighlight %}
 
-section but before the
+下面的 `<% else %>`
 
 {% highlight erb %}
 <% else %>
 {% endhighlight %}
 
-add
+上面加入
 
 {% highlight erb %}
-<%= image_tag current_user.gravatar_url %>
+<span class="user-gravatar"><%= image_tag current_user.gravatar_url %></span>
 {% endhighlight %}
 
-Now open you app in your browser and login with an e-mail address that is associated with a Gravatar. You should be able to see your Gravatar.
+並打開 `app/assets/stylesheets/application.css` 加入：
+
+```css
+.user-gravatar {
+    display: inline-block;
+    width: 32px;
+    position: relative;
+    margin: 0;
+}
+
+.user-gravatar img {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    top: -22px;
+}
+```
+
+現在打開瀏覽器，登入妳的網站，應該會看到在 Gravatar 網站註冊時，與 E-mail 所綁定的大頭貼了！恭喜妳！
