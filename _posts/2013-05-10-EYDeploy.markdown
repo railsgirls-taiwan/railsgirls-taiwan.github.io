@@ -1,18 +1,20 @@
 ---
 layout: default
-title: Rails Girls 與 Engine Yard
+title: Rails Girls on Engine Yard
 permalink: engineyard
 ---
 
-# 讓 App 在 Engine Yard 上線
+# App 上線至 Engine Yard
 
 *Created by Mary Jenn, [@mfjenn](https://twitter.com/mfjenn)*
 
-*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-#### 確定妳的資料庫是 PostgreSQL。
+#### 確認資料庫使用的是 PostgreSQL。
 
-Engine Yard 使用不同於 Rails 預設的資料庫。要讓資料庫在 Engine Yard 跑起來，請修改 Gemfile 下面的內容：
+Engine Yard 使用不同於 Rails 預設的資料庫。要讓資料庫在 Engine Yard 跑起來，請修改 Gemfile 的內容：
+
+將
 
 {% highlight ruby %}
 gem 'sqlite3'
@@ -25,17 +27,16 @@ group :development do
 	gem 'sqlite3'
 end
 
-
 group :production do
 	gem 'pg'
 end
 {% endhighlight %}
 
-執行 `bundle install --without production` 來安裝相依軟體。
+執行 `bundle install --without production` 來安裝所需要的 RubyGems。
 
 #### 版本管理系統
 
-妳需要把妳的 app 加到 Git 代碼倉庫（repository）。在終端裡執行下面的命令：
+妳需要把妳的 App 加到 Git 程式碼倉庫（repository）。在終端機裡輸入下面的命令：
 
 >	`git init`
 
@@ -43,27 +44,26 @@ end
 
 >	`git commit -m "initial commit"`
 
-
 **教練：** 講解版本管理系統以及 Git 的好時機。
 
 ### 確認 GitHub 上有個 Rails 的應用
 
-妳需要有個 GitHub 帳號，以及一個 repo，讓 Engine Yard 可以抓妳的 app。按照 [GitHub 官方的步驟](https://help.github.com/articles/create-a-repo)來建立一個 repo 並將 app 傳上去。如果你沒有可以跑的 Rails 應用，可以 fork [Engine Yard 提供的範例 TODO app](https://github.com/engineyard/todo)。妳需要幫忙的話，教練可以帶你走一遍。
+妳需要有個 GitHub 帳號，以及一個 Repository，讓 Engine Yard 可以去該 Repository 抓妳的 App。按照 [GitHub 官方的步驟](https://help.github.com/articles/create-a-repo)來建立一個 Repository 並將 App 傳上去。如果妳沒有可以跑起來的 Rails App，可以 fork [Engine Yard 提供的範例 TODO app](https://github.com/engineyard/todo)。需要幫忙的話，教練可以帶妳玩一遍這個流程。
 
 ### 註冊 Engine Yard 免費測試帳號
 
-到 Engine Yard 的[官網](https://www.engineyard.com/)點擊 "GET STARTED FREE" 的按鈕來註冊 500 小時免費試用帳號。註冊會寄一封驗證信，檢查妳的 email，按下驗證連結並登入妳的帳號。點選 "Your available applications"
+到 Engine Yard 的[官網](https://www.engineyard.com/)點擊 "GET STARTED FREE" 的按鈕來註冊 500 小時免費試用帳號。註冊會寄一封驗證信，檢查妳的 E-mail，按下驗證連結並登入妳的帳號。點選 "Your available applications"
  下的連結（"Engine Yard Cloud"），這會帶妳到主控台。
 
 ### 建立 Engine Yard 雲帳戶
 
-1. 為妳的帳號選個名字。建議選個與妳相關的，選擇開發者或機構（如果你會有協作者的話）。按下 "Start Trial" 按鈕。
+1. 為妳的帳號選個名字。建議選個與妳相關的帳號名稱。選擇開發者或機構（如果妳會有協作者的話）。按下 "Start Trial" 按鈕。
 
-2. 儘管看看下拉式選單有什麼功能，但現在用預設值就好。因為這是個基本的 Rails app 而已。
+2. 看看下拉式選單有什麼功能，但現在用預設值就好。因為這是個基本的 Rails App 而已。
 
-3. 在標有 "Git Repository URI" 的框框，貼上妳的 GitHub repo 的 URI。格式應該會像是這樣（"git@github.com:mfjenn/blogotron.git"）
+3. 在標有 "Git Repository URI" 的框框，貼上妳的 GitHub Repository 的 URI。格式應該會像是這樣（"git@github.com:mfjenn/blogotron.git"）
 
-### 準備妳的佈署金鑰
+### 準備妳的部署金鑰
 
 妳現在應該會在一個頁面寫 "Allow Engine Yard access to private repository"。
 
@@ -81,7 +81,7 @@ end
 
 ### 建立與設定環境
 
-一旦妳按了 "My deploy key is in place" 按鈕，會被帶到一個頁面，上面寫 "Create New Environment for (Your Account Name) App"。儘管看看下拉式選單有什麼功能，但現在用預設值就好。妳不用設定域名沒關係。
+一旦妳按了 "My deploy key is in place" 按鈕，會跳到一個頁面，上面寫 "Create New Environment for (Your Account Name) App"。看看下拉式選單有什麼功能，但現在用預設值就好。妳不用設定域名沒關係。
 
 * 按 "Create Environment" 按鈕。
 
@@ -89,23 +89,23 @@ end
 
 在這頁，我們來選擇 staging 的設定。
 
-*	按 "Boot This Configuration"。妳會來到一個新的頁面，會看到數個狀態條正在跑。Engine Yard 正在配置妳的 app。得稍等一會，直到綠色的點出現。通常是 10 分鐘，休息一下吧？去拿杯水或是咖啡。
+*	按 "Boot This Configuration"。妳會來到一個新的頁面，會看到數個狀態條正在跑。Engine Yard 正在設定妳的 App。得稍等一會，直到綠色的點出現。通常是 10 分鐘，休息一下吧？去拿杯水或是咖啡。
 
-**教練：** 講解 Staging 與 Production 的差別，為什麼有重複的環境很重要？講解 master & slave 是什麼。Engine Yard 的 Failover 的工作原理？為什麼這個很重要？
+**教練：** 講解 Staging 與 Production 的差別，為什麼有兩個重複的環境很重要？講解 master & slave 是什麼。Engine Yard Failover 的工作原理？為什麼 Failover 很重要？
 
-#### 佈署妳的應用
+#### 部署妳的應用
 
 1. 當所有的燈變綠燈的時候，按 "Deploy"。
 
-2. 一旦妳看到這段話 "YOUR NAME successfully deployed HEAD"，恭喜妳，佈署成功！
+2. 一旦妳看到這段話 "YOUR NAME successfully deployed HEAD"，恭喜妳，部署成功！
 
-3. 按 "View your application" 來訪問妳上線中的 app。
+3. 按 "View your application" 來訪問正上線中的 App。
 
-4. 如果妳看到紅色的提示說佈署失敗，我們需要來研究看看。舉手找個教練來幫忙。
+4. 如果妳看到紅色的提示說部署失敗，我們需要來研究看看。舉手找個教練來幫忙。
 
-#### 停止執行中的 app 來節省時間
+#### 停止執行中的 App 來節省時間
 
-一旦妳把 app 跑起來以後，記得按 "stop" 按鈕來節省寶貴的 500 小時免費試用時間，當然妳可以再次啟動 app。
+一旦妳把 App 跑起來以後，記得按 "stop" 按鈕來節省寶貴的 500 小時免費試用時間，當然妳可以再次啟動 App。
 
 ### 其它資源
 
