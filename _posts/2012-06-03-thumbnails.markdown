@@ -57,24 +57,32 @@ bundle
 
 {% highlight ruby %}
 version :thumb do
-  process :resize_to_fill => [50, 50]
+  process :resize_to_fill => [150, 150]
 end
 {% endhighlight %}
 
 現在上傳的圖片應該會改變大小了，之前加入的圖片不會受影響。來編輯看看已加入的圖片，並重新傳一張圖片。
+
+之前的圖片也想要變成縮圖的話，首先啟動 Rails console `rails c`，執行下段程式碼：
+
+```ruby
+Idea.find_each do |idea|
+  idea.picture.recreate_versions!(:thumb)
+end
+```
 
 ## 顯示縮圖
 
 要確認上傳的圖片有縮圖成功，打開 `app/views/ideas/index.html.erb`。將這行
 
 {% highlight erb %}
-<td><%= idea.picture %></td>
+<%= image_tag idea.picture_url, :width => '100%' if idea.picture.present? %>
 {% endhighlight %}
 
 改成
 
 {% highlight erb %}
-<td><%= image_tag idea.picture_url(:thumb) if idea.picture? %></td>
+<%= image_tag idea.picture_url(:thumb) if idea.picture? %>
 {% endhighlight %}
 
 到瀏覽器看看 idea 清單，看看縮圖是不是有出現。
