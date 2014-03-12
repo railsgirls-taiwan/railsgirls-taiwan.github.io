@@ -43,7 +43,19 @@ rails generate devise:install
 
 ##*2.*設定 Devise
 
-devise 需要設定 mailer 預設的網址選項，打開 `config/environments/development.rb` ，在檔案最後面找到 `end` 關鍵字，並在 `end` 上面加入這行：
+devise 需要設定一組密鑰，先用 `rake secret` 來產生一組密鑰，將產生的內容貼至 `config/initializers/devise.rb` 的這一行（去掉 `#` 號）。
+
+```ruby
+# config.secret_key = 'o34f89756234d52fddf79983d95483cf78343a5390c79e1cd5fa897711d89b612b0d293908e681a428650e1bdf5c5dd8d82effb3737d6918b3f9473ee5adf41d0'
+```
+
+改成
+
+```ruby
+config.secret_key = '填入 rake secret 產生的內容'
+```
+
+接著需要設定 mailer 預設的網址選項，打開 `config/environments/development.rb` ，在檔案最後面找到 `end` 關鍵字，並在 `end` 上面加入這行：
 
 {% highlight ruby %}
 config.action_mailer.default_url_options = { host: 'localhost:3000' }
@@ -123,6 +135,6 @@ rake db:migrate
 ## 下一步？
 
 * 加入更多欄位到 User Model
-* 加入 Idea 與 User Model之間的關係
+* 加入 Idea 與 User Model 之間的關係
 * 限制使用者只能編輯自己的 idea。
 * 使用角色或權限來管理（用一個像是 CanCan 這樣流行的授權 gem）
