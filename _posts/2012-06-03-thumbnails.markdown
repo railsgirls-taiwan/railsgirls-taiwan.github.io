@@ -32,7 +32,7 @@ gem 'carrierwave'
 加入
 
 {% highlight ruby %}
-gem 'mini_magick', '3.5.0'
+gem 'mini_magick', '3.7.0'
 {% endhighlight %}
 
 接著到終端裡輸入
