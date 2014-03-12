@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Rails Girls 與 Heroku
+title: Rails Girls on Heroku
 permalink: heroku
 ---
 
-# 讓 App 在 Heroku 上線
+# App 上線至 Heroku
 
 *Created by Terence Lee, [@hone02](https://twitter.com/hone02)*
 
@@ -12,15 +12,15 @@ permalink: heroku
 
 ### 取得 Heroku
 
-按照 [Heroku 官方的快速指南](https://devcenter.heroku.com/articles/quickstart)的步驟 1 至步驟 3，來註冊、安裝工具包並登入。
+按照 [Heroku 官方的快速上手指南](https://devcenter.heroku.com/articles/quickstart)的步驟 1 至步驟 3，來註冊、安裝工具包並登入。
 
-__教練__： 講解將 app 佈署到 Heroku，跟傳統自己架伺服器比起來，有什麼好處。
+__教練__： 講解將 App 部署到 Heroku，跟傳統自己架伺服器比起來，有什麼好處。
 
 ### 準備妳的 app
 
 #### 版本管理系統
 
-需要將我們的程式加到版本管理。妳可以透過在終端裡執行以下命令來達成：
+需要把程式碼加到版本管理系統。在終端機裡輸入以下命令：
 
 {% highlight sh %}
 git init
@@ -31,11 +31,13 @@ git add .
 git commit -m "initial commit"
 {% endhighlight %}
 
-__教練__：講解版本管理系統的好時機。順便解釋 .gitignore 以及為什麼我們不想要有些檔案被傳上去。
+__教練__：講解使用版本管理系統的好時機。順便解釋 `.gitignore` 檔案是什麼，並解釋為什麼要忽略某些檔案被傳上去。
 
-#### 更新我們的資料庫
+#### 更新資料庫
 
-首先，我們需要讓資料庫在 Heroku 跑起來。Heroku 使用不同於 Rails 預設的資料庫。請加入下列內容至 Gemfile：
+首先，需要讓資料庫在 Heroku 跑起來。Heroku 使用不同於 Rails 預設的資料庫。請修改 Gemfile 的內容：
+
+請將
 
 {% highlight ruby %}
 gem 'sqlite3'
@@ -58,13 +60,13 @@ __教練__： 可以講講 RDBMS 以及 pg 與 sqlite 的差別，請講點 Hero
 
 #### Adding rails\_12factor
 
-接著，需要在 Gemfile 加入 rails\_12factor，讓我們的 app 可以出現在 Heroku。
+接下來，需要在 Gemfile 加入 rails\_12factor，讓我們的 app 可以出現在 Heroku。
 
-這個 Gem 幫妳 Rails 調整成適合在 Heroku 工作的模式，舉例來說，記錄檔存放的地方、靜態檔案的設定（圖片、樣式表以及 JavaScript 檔案）會設定成適合 Heroku 系統的設定。
+這個 Gem 調整妳的 Rails App 成為適合在 Heroku 工作的模式，舉例來說，記錄檔存放的地方、靜態檔案的設定（圖片、樣式表以及 JavaScript 檔案）會設定成適合 Heroku 系統的設定。
 
-請將 Gemfile 的下面內容：
+請修改 Gemfile 的內容：
 
-Please change the following in the Gemfile:
+將
 
 {% highlight ruby %}
 group :production do
@@ -81,7 +83,7 @@ group :production do
 end
 {% endhighlight %}
 
-修改好之後執行 `bundle`，接著將 Gemfile.lock 提交到妳的程式碼倉庫 (repository)：
+修改好之後到終端機執行 `bundle` 命令，接著將 `Gemfile.lock` 提交到妳的程式碼倉庫 (repository)：
 
 {% highlight sh %}
 git commit -a -m "Added rails\_12factor gem and updated Gemfile.lock"
@@ -89,11 +91,11 @@ git commit -a -m "Added rails\_12factor gem and updated Gemfile.lock"
 
 __教練__: 可以說說 Heroku 的記錄檔怎麼用，或是其它相關的東西。
 
-### 佈署妳的 app
+### 部署 App
 
-#### 產生 App
+#### 建立 App
 
-需要在終端裡輸入 `heroku create` 來產生 Heroku app，妳會看到像是下面的訊息：
+需要在終端裡輸入 `heroku create`，在 Heroku 上產生一個新的 Heroku app，妳會看到像是下面的訊息：
 
 {% highlight sh %}
 Creating evening-sky-7498... done, stack is cedar
@@ -101,7 +103,7 @@ http://evening-sky-7498.herokuapp.com/ | git@heroku.com:evening-sky-7498.git
 Git remote heroku added
 {% endhighlight %}
 
-這個情況裡，"evening-sky-7498" 便是妳 app 的名稱。
+上面的 "evening-sky-7498" 就是妳 Heroku App 的名稱。
 
 #### 上傳程式碼
 
@@ -124,18 +126,17 @@ Total 134 (delta 26), reused 0 (delta 0)
        http://evening-sky-7498.herokuapp.com deployed to Heroku
 {% endhighlight %}
 
-看到 "Launching..." 的訊息表示 app 已經上傳完畢了。
+看到 "Launching..." 的訊息表示 App 已經上傳完畢了。
 
 #### 資料庫遷移
 
-接著需要遷移資料庫，跟我們在工作坊裡在自己電腦上做的一樣： `heroku run rake db:migrate`。
+接著需要遷移資料庫，跟我們在工作坊時，在自己電腦上做的一樣： `heroku run rake db:migrate`。
 
+當這條命令執行完畢時，妳可以用產生出來的網址來訪問妳的 App，可以打開這個頁面 [http://evening-sky-7498.herokuapp.com/](http://evening-sky-7498.herokuapp.com/) 看看。也可以在終端裡輸入 `heroku open` 來開啟網頁。
 
-當這條命令執行完畢時，妳可以用產生出來的網址訪問妳的 app，可以打開這個頁面 [http://evening-sky-7498.herokuapp.com/](http://evening-sky-7498.herokuapp.com/) 看看。也可以在終端裡輸入 `heroku open` 來開啟網頁。
+#### 結束小記
 
-#### 結束記
-
-沒有某些東西便沒有 Heroku 平台。跑在 Heroku 上的應用程式都是放在一個叫做 ephermeral 的環境裡 ─ 這代表任何由妳的 app 建立的檔案（除了存在資料庫的資訊），在環境重新啟動後就會消失（比如妳 push 一個新版 app）。
+沒有某些東西，便沒有 Heroku 平台。跑在 Heroku 上的應用程式都是放在一個叫做 ephermeral 的環境裡 ─ 這代表任何由妳的 app 建立的檔案（除了存在資料庫的資訊），在環境重新啟動後就會消失（比如妳 push 一個 App 的新版）。
 
 ###### [Ephemeral 檔案系統](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem)
 
@@ -150,11 +151,11 @@ Total 134 (delta 26), reused 0 (delta 0)
 
 ##### Ephemeral Storage 的解決辦法
 
-當然妳在跑實際應用的時候，這不是很有用。但事情總是有解決辦法，下面是許多知名網站的解決辦法。
+當然妳在跑實際 App 的時候，這不是很有用。但事情總是有解決辦法，下面是許多知名網站的解決辦法。
 
-最常見的方法是用像是外部的 asset 代管，像是 Amazon S3 (Simple Storage Service)，或是 Rackspace CloudFiles。這些服務（便宜，每 GB $0.10）提供雲儲存服務，讓可以有持久化儲存（不會消失）。
+最常見的方法是，asset 交給外部服務代管，像是 Amazon S3 (Simple Storage Service)，或是 Rackspace CloudFiles。這些服務（便宜，每 GB $0.10）提供雲儲存服務，可以有持久化儲存（不會消失）。
 
-這個功能有點超出本教學的範圍，這裡有更多資源，妳可以找到妳自己的解決辦法：
+這個功能有點超出本教學的範圍，這裡有更多資源，妳可以找到自己的解決辦法：
 
 * [How to: Make Carrierwave work on Heroku](https://github.com/carrierwaveuploader/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku)
 * [Amazon S3 - 初心者指南](http://www.hongkiat.com/blog/amazon-s3-the-beginners-guide/)
