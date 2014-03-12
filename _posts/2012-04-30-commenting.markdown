@@ -22,6 +22,12 @@ rails g scaffold comment user_name:string body:text idea_id:integer
 
 > `rails g` 是 `rails generate` 的縮寫
 
+在資料庫建立 comment：
+
+{% highlight sh %}
+rake db:migrate
+{% endhighlight %}
+
 ##*2.*建立 Model 的 Relation
 
 首先呢要確定 Rails 知道 ideas 與 comments 之間的關係，我們需要建立 Idea 與 Comment Model 之間的關係。一個 idea 可以有很多人留言，讓我們把這個關係加入 Idea Model。打開 `app/models/idea.rb`，在這行的後面：
@@ -69,13 +75,7 @@ belongs_to :idea
 <%= render 'comments/form' %>
 {% endhighlight %}
 
-打開 `app/controllers/ideas_controller.rb` 在 show action 裡面的這行後面
-
-{% highlight ruby %}
-@idea = Idea.find(params[:id])
-{% endhighlight %}
-
-加入
+打開 `app/controllers/ideas_controller.rb` 在 show action 新增這行
 
 {% highlight ruby %}
 @comment = @idea.comments.build
