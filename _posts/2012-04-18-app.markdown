@@ -8,26 +8,31 @@ permalink: app
 
 *Created by Vesa Vänskä, [@vesan](https://twitter.com/vesan)*
 
-*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-**確認電腦已安裝 Rails**，尚未安裝請參考[**安裝指南**](/install)。
+**請先確認電腦是不是已經安裝了 Rails**，還沒有安裝的話，請參考[**安裝指南**](/install)。
 
 ## 認識工具
 
 <div class="indent" markdown="1">
 
 <h3><i class="icon-text-editor">&nbsp;</i></h3>
-### 編輯器
 
-[Sublime Text](http://www.sublimetext.com)、[Komodo Edit](http://www.activestate.com/komodo-edit)、Vim、Emacs 以及 Gedit 都是妳可以用來寫程式及編輯檔案的編輯器。
+<h3>編輯器</h3>
+
+<a href="http://www.sublimetext.com">Sublime Text</a>、<a href="http://www.activestate.com/komodo-edit">Komodo Edit</a>、Vim、Emacs 以及 Gedit 都是妳可以用來寫程式、編輯檔案的編輯器。
 
 <h3><i class="icon-prompt">&nbsp;</i></h3>
-### 終端 (Windows 叫命令提示字元)
-是妳可以啟動 Rails 伺服器與執行命令的地方。
+
+<h3>終端機（Windows 叫做命令提示字元）</h3>
+
+啟動 Rails 伺服器與執行命令的地方。
 
 <h3><i class="icon-browser">&nbsp;</i></h3>
-### 網路瀏覽器
-(火狐、Safari、Chrome) 用來檢視妳的 APP。
+
+<h3>瀏覽器</h3>
+
+（火狐、Safari、Chrome）可以用這些瀏覽器來預覽妳的 APP。
 
 </div>
 
@@ -35,13 +40,13 @@ permalink: app
 
 針對妳的作業系統選對的步驟很重要 —— 在 Windows 執行的命令跟 Mac 與 Linux 上的不太一樣。如果妳遇到任何問題，命令最下方可切換作業系統。
 
-## Step 1. 建立 APP
+## *1.*建立 APP
 
-我們即將建立一個嶄新的 Rails APP，叫做 *railsgirls*。
+我們即將建立一個嶄新的 Rails App，名字叫做 *railsgirls*。
 
-首先，打開終端：
+首先，打開終端機：
 
-* Mac OS X: 打開 Spotlight，輸入 *Terminal* 並點選 *Terminal* 。
+* Mac OS X: 打開 Spotlight，輸入 *Terminal* 並點選 *Terminal*。
 * Windows: 按開始，找到**命令提示字元**，接著按 *Command Prompt with Ruby on Rails*。
 * Linux (Ubuntu/Fedora): 在 dash 搜索 *Terminal* 並點選 *Terminal*。
 
@@ -54,7 +59,7 @@ mkdir projects
 {% endhighlight %}
 
     <div>
-可以用 <code>ls</code> 命令來檢查叫做 <code>projects</code> 的資料夾有沒有產生。應該會在輸出裡看到 <code>projects</code> 資料夾。現在你想從當下資料夾進入 <code>projects</code> 資料夾，可以執行：
+可以用 <code>ls</code> 命令來檢查叫做 <code>projects</code> 的資料夾有沒有產生。應該會在輸出裡看到 <code>projects</code> 資料夾。現在妳想從當下資料夾進入 <code>projects</code> 資料夾，可以執行：
     </div>
 
 {% highlight sh %}
@@ -92,7 +97,7 @@ mkdir projects
 {% endhighlight %}
 
     <div>
-可以用 <code>dir</code> 命令來檢查叫做 <code>projects</code> 的資料夾有沒有產生。應該會在輸出裡看到 <code>projects</code> 資料夾。現在你想從目前的資料夾進入 <code>projects</code> 資料夾，可以執行：
+可以用 <code>dir</code> 命令來檢查叫做 <code>projects</code> 的資料夾有沒有產生。應該會在輸出裡看到 <code>projects</code> 資料夾。現在妳想從目前的資料夾進入 <code>projects</code> 資料夾，可以執行：
     </div>
 
 {% highlight sh %}
@@ -150,11 +155,11 @@ ruby bin\rails server
 
 **教練：** 解釋每個命令用來在做什麼。產生了什麼檔案？伺服器的功用？
 
-## Step 2. 建立 Idea 鷹架
+## *2.*建立 Idea Scaffold
 
-我們即將使用 Rails 內建的鷹架功能來起步。讓我們可以： __列出、新增、移除、編輯、檢視想法。__
+我們即將使用 Rails 內建的 Scaffold 功能來起步。讓我們可以： __列出、新增、移除、編輯、檢視 idea。__
 
-**教練：** Rails 鷹架是什麼？（解釋鷹架命令、Model 名稱以及相關的資料庫表格、命名慣例、屬性以及型別...等等。）什麼是資料庫遷移（Migrations）？為什麼需要遷移？
+**教練：** Rails Scaffold 是什麼？（解釋 Scaffold 命令、Model 名稱以及相關的資料庫表格、命名慣例、屬性以及型別...等等。）什麼是資料庫遷移（Migrations）？為什麼需要遷移？
 
 <div class="os-specific">
   <div class="nix">
@@ -170,7 +175,7 @@ rails generate scaffold idea name:string description:text picture:string
   </div>
 </div>
 
-鷹架在專案資料夾下建立了一些新檔案，要讓這些檔案生效，需要執行一些指令，來更新資料庫、並重新啟動伺服器。
+Scaffold 在專案資料夾下建立了一些新檔案，要讓這些檔案生效，需要執行一些指令，來更新資料庫、並重新啟動伺服器。
 
 <div class="os-specific">
   <div class="nix">
@@ -188,15 +193,15 @@ ruby bin\rails server
   </div>
 </div>
 
-到瀏覽器打開 [http://localhost:3000/ideas](http://localhost:3000/ideas)。四處把玩看看，妳僅用幾行命令就產生出來的 APP。
+到瀏覽器打開 [http://localhost:3000/ideas](http://localhost:3000/ideas)。四處把玩看看，妳僅用幾行命令就產生出來的 App。
 
 玩了一陣子之後，按 `CTRL-C` 來再次離開伺服器。
 
-## Step 3. 設計
+## *3.*設計
 
-**教練：** 講講 Rails 與 HTML 之間的關係。Views 裡面哪個部分是 HTML？哪個部分是嵌入 Ruby (ERB)？MVC 是什麼？與它們有什麼關係？（模型與控制器負責產生 HTML Views）
+**教練：** 講講 Rails 與 HTML 之間的關係。Views 裡面哪個部分是 HTML？哪個部分是 ERB？MVC 是什麼？與它們有什麼關係？（Model 與 Controller 負責產生 HTML Views）
 
-妳的 APP 現在看起來不太漂亮。讓我們來給她打扮打扮。我們會使用 Twitter Bootstrap 專案來非常簡單的幫 APP 變漂亮。
+妳的 App 現在看起來不太漂亮。讓我們來給她妝扮妝扮。我們會使用 Twitter Bootstrap 專案來非常簡單的幫 App 變漂亮。
 
 在編輯器裡打開 `app/views/layouts/application.html.erb`，找到這行
 
@@ -225,7 +230,7 @@ ruby bin\rails server
 </div>
 {% endhighlight %}
 
-讓我們也加入導覽條與 footer 到頁面吧。在同一個檔案裡，`<body>` 標籤下面，加入
+讓我們也加入選單與 footer 到頁面吧。在同一個檔案裡，`<body>` 標籤下面，加入
 
 {% highlight html %}
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -248,12 +253,12 @@ ruby bin\rails server
 </nav>
 {% endhighlight %}
 
-以及在  `</body>` 之前，加入
+以及在 `</body>` 之前，加入
 
 {% highlight html %}
 <footer>
   <div class="container">
-    Rails Girls 2014
+    Rails Girls Taipei 2014
   </div>
 </footer>
 <script src="//railsgirls.com/assets/bootstrap.js"></script>
@@ -264,17 +269,17 @@ ruby bin\rails server
 {% highlight css %}
 body { padding-top: 100px; }
 footer { margin-top: 100px; }
-table, td, th { vertical-align: middle !important; border: none !important; }
-th { border-bottom: 1px solid #DDD !important; }
+table, td, th { vertical-align: middle; border: none; }
+th { border-bottom: 1px solid #DDD; }
 {% endhighlight %}
 
-修改過後記得存檔，並重新整理瀏覽器，來看看什麼被改變了。妳也可以繼續調整 HTML 與 CSS。
+修改過後記得要存檔，並重新整理瀏覽器，看看什麼變得不一樣了。妳也可以繼續調整 HTML 與 CSS。
 
 **教練：** 稍微講講 CSS 與 layout。
 
-## Step 4: 加入圖片上傳
+## *4.*加入圖片上傳
 
-我們需要安裝一點軟體，讓我們可以在 Rails 裡上傳檔案。
+我們需要安裝一點軟體（Gem），讓我們可以在 Rails 裡上傳檔案。
 
 在專案資料夾下，用編輯器打開 `Gemfile`，找到這行，在這行下面：
 
@@ -306,7 +311,7 @@ rails generate uploader Picture
 
 在終端裡按下 `CTRL-C` 來離開伺服器。一旦伺服器停止，妳可以按上，來獲得上個輸入的命令，接著按 enter 來重新啟動伺服器。
 
-為什麼需要重新啟動伺服器呢？因為 APP 需要載入剛剛加入的函式庫。
+為什麼需要重新啟動伺服器呢？因為 App 需要載入剛剛加入的函式庫。
 
 打開 `app/models/idea.rb` 並在這行下面
 
@@ -332,7 +337,7 @@ class Idea < ActiveRecord::Base
 <%= f.file_field :picture %>
 {% endhighlight %}
 
-在妳的瀏覽器裡，新增一個想法吧，順便貼張圖片。當你上傳一張圖片，它看起來不像圖片，因為它顯示的是圖片的路徑，所以讓我們讓圖片顯示吧。
+在妳的瀏覽器裡，新增一個想法吧，順便貼張圖片。當妳上傳一張圖片，它看起來不像圖片，因為它顯示的是圖片的路徑，所以讓我們讓圖片顯示吧。
 
 打開 `app/views/ideas/show.html.erb` 並將這行
 
@@ -343,21 +348,21 @@ class Idea < ActiveRecord::Base
 改成
 
 {% highlight erb %}
-<%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+<%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
 {% endhighlight %}
 
 現在重新整理妳的瀏覽器，看看發生了什麼？
 
 **教練：** 稍微講講 HTML。
 
-## Step 5: 調整路由
+## *5.*調整路由
 
 如果妳試著開啟 [http://localhost:3000](http://localhost:3000)，它仍顯示 "Welcome aboard" 頁面。讓我們來把這頁導到 ideas 頁面。
 
 打開 `config/routes.rb` 在第一行的下一行（第二行），加入
 
 {% highlight ruby %}
-root :to => redirect('/ideas')
+root to: redirect('/ideas')
 {% endhighlight %}
 
 用瀏覽器打開網站的根目錄 (root path，也就是 [http://localhost:3000](http://localhost:3000))，看看有沒有改變。
@@ -365,7 +370,6 @@ root :to => redirect('/ideas')
 **教練：** 講解路由，包含路由順序以及路由與靜態檔案的關係。
 
 ## 建立靜態頁面
-
 
 讓我們來添加一頁靜態頁面吧，列出這個 app 的作者是誰 —— 也就是妳！：）
 
@@ -390,19 +394,15 @@ get "pages/info"
 ## 下一步？
 
 + 使用 HTML &amp; CSS 加入設計。
-+ 加入評分功能（ratings）
++ 加入評分功能（Ratings）
 + 使用 CoffeeScript （或 JavaScript）加入互動。
 + 加入圖片大小轉換使加載圖片更快完成。
 
 ## 其它指南
 
-<!-- * Guide 0: [Handy cheatsheet for Ruby, Rails, console etc.](https://github.com/PragTob/rails-beginner-cheatsheet) -->
+* Guide 0: [Handy cheatsheet for Ruby, Rails, console etc.](http://www.pragtob.info/rails-beginner-cheatsheet/)
 * Guide 1: [加入評論功能 by Janika Liiv](/commenting)
 * Guide 2: [把 APP 放到 Heroku by Terence Lee](/heroku)
-<!-- * Guide 3: [Build a map of workshop participants by Rails Girls Berlin](http://railsgirlsberlin.de/apptutorial/)
- -->
 * Guide 3: [給上傳的圖片建立縮圖 by Miha Filej](/thumbnails)
 * Guide 4: [使用 HTML 與 CSS 添加設計 by Alex Liao](/design)
 * Guide 5: [用 Devise 加入驗證功能 by Piotr Steininger](/devise/)
-<!-- * Guide 7: [Go through additional explanations for the App by Lucy Bain](https://github.com/lbain/railsgirls)
- -->

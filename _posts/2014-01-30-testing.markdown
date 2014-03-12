@@ -1,0 +1,158 @@
+---
+layout: default
+title: 最好先檢查，避免 App 壞掉。
+permalink: testing-rspec
+---
+
+# 使用 RSpec 來測試 App
+
+*Created by Clemens Helm, [@clemenshelm](https://twitter.com/clemenshelm) and Floor Drees, [@floordrees](https://twitter.com/floordrees)*
+
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+
+RSpec 是 Ruby 語言的測試框架之一，使用看起來很像 Ruby 的語法，來描述 App 的行為。測試結果會輸出在終端機，所以妳也可以測試妳的閱讀技巧呢（開個玩笑）。
+
+__教練：__ 講講測試與行為驅動開發是什麼。
+
+### 安裝 RSpec
+
+安裝 RSpec 與所有依賴的 RubyGems：
+{% highlight sh %}
+gem install rspec
+{% endhighlight %}
+
+接著到終端機裡執行：
+
+{% highlight sh %}
+rspec --init
+{% endhighlight %}
+
+這條命令會在專案目錄下產生 `.rspec`，以及 `spec` 目錄下產生 `spec_helper.rb`。
+
+Rubyist 通常交互使用“測試”（test）與“規範”（specification）這兩個詞，這也是為什麼測試是存在 `spec` 目錄下。
+
+在 `spec` 目錄建立一個 `idea_spec.rb` 檔案：
+
+{% highlight sh %}
+touch spec/models/idea_spec.rb
+{% endhighlight %}
+
+填入以下內容：
+
+{% highlight ruby %}
+require 'spec_helper'
+require 'idea'
+{% endhighlight %}
+
+接著讓我們來描述一個“規範”（寫一個測試）看看：
+
+{% highlight ruby %}
+describe Idea do
+  it 'has a name' # your examples (tests) go here
+end
+{% endhighlight %}
+
+在終端機執行：
+
+{% highlight sh %}
+rspec spec/models/idea_spec.rb
+{% endhighlight %}
+
+會告訴你測試處於 pending 狀態，因為測試的內容還沒實作。
+
+__教練：__ 講講如何使用終端機的輸出來 Google 解決問題
+
+讓我們填入具體的測試內容！
+
+{% highlight ruby %}
+describe Idea do
+  it "has a name" do # yep, you can totally use 'it'
+    idea = Idea.new # creating a new idea 'instance'
+    idea.name.should be_true # this is our expectation
+  end
+end
+{% endhighlight %}
+
+啊哈！妳的第一個測試！
+
+__教練：__ 逐行解釋剛剛的測試
+
+#### 重構
+
+剛剛那兩行其實也可以寫成一行：
+
+{% highlight ruby %}
+describe Idea do
+  its(:name) { should be_true }
+end
+{% endhighlight %}
+
+這看起來好多了，但背後隱藏了許多魔法。現在我們只要知道，“重構”是根據經驗把大塊程式碼轉成小塊程式碼。
+
+__教練：__ 講講什麼是重構
+
+#### 讓測試稍後再測（待辦事項）
+
+耶！待辦事項。太棒了！一個俏皮的 RSpec 功能，讓妳可以把特定的測試標註為“待辦”（pending）。
+
+怎麼樣把一個測試變成待辦事項呢？
+
+沒有 `do` 與 `end` 的 `it`：
+
+{% highlight ruby %}
+it "has a name"
+{% endhighlight %}
+
+或是在 `it` 前面加上 `x`：
+
+{% highlight ruby %}
+describe Idea do
+  xit "has a name" do
+    ...
+  end
+end
+{% endhighlight %}
+
+或者是把 `it` 換成 `pending` 也可以哦！
+
+{% highlight ruby %}
+describe Idea do
+  pending "has a name" do
+    ...
+  end
+end
+{% endhighlight %}
+
+### 行為驅動開發
+
+行為驅動開發呢，通常是先想想我們想要做什麼，寫下期望會做的事（測試），接著心中想著測試，開始一步一步做出來。
+
+我們可能會先寫 Idea Model 的測試 (`touch spec/models/idea_spec.rb`)：
+
+{% highlight ruby %}
+describe Idea do
+  it "has a name"
+    idea = Idea.new
+    idea.name.should be_true
+    # or, alternatively: idea.name.should == true
+  end
+end
+{% endhighlight %}
+
+現在跑測試看看 `rspec spec/models/idea_spec.rb` 會告訴你。幸運的是，錯誤並不可怕，實際上還會幫助妳寫出需要的程式碼呢！
+
+接著便可以實作 Idea Model 了...。
+
+好，試著在之後的活動裡寫測試來檢查妳是否都做對了。
+
+{% highlight ruby %}
+describe Attendee do
+  it "tests everything"
+end
+{% endhighlight %}
+
+開個玩笑的啦！
+
+Happy Testing！
+
+__教練：__ 講講測試有什麼優點。

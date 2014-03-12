@@ -4,17 +4,17 @@ title: 使用 HTML 與 CSS 添加設計
 permalink: design
 ---
 
-# 使用 HTML & CSS 添加設計
+# 使用 HTML & CSS 設計頁面
 
 *Created by Alex Liao, [@alexliao](http://bannka.com/alex)*
 
-*Translated by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-現在 app 執行的很好，但看起來仍像是用鷹架搭的。讓我們加點設計到 app，讓它看起來像專業的網站吧。當妳完成本教學時，妳的 app 看起來會像[這樣](http://railsgirlsapp.herokuapp.com/ideas)。
+現在 app 執行的很好，但看起來仍像是用 Scaffold 產生出來的。讓我們加點設計到 app，讓它看起來像專業的網站吧。當妳完成本教學時，妳的 app 看起來會像[這樣](http://railsgirlsapp.herokuapp.com/ideas)。
 
-## 第一步：調整應用的版面
+##*1.*調整應用的版面
 
-首先，讓我們用輕量的 bootstrap.min.css 來美化妳的 app。
+首先呢，讓我們用輕量的 bootstrap.min.css 來美化妳的 app。
 
 在編輯器裡打開 `app/views/layouts/application.html.erb`，並將下面這行
 
@@ -22,10 +22,10 @@ permalink: design
 <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
 {% endhighlight %}
 
-換成這個
+換成這行
 
 {% highlight html %}
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
 {% endhighlight %}
 
 開啟 `app/assets/stylesheets/application.css`，把這行
@@ -44,11 +44,11 @@ body { padding-top: 60px; }
 
 現在重新整理這個頁面 [http://localhost:3000/ideas](http://localhost:3000/ideas)。妳目前看不到什麼變化，但這對接下來的步驟很有用。
 
-## 第二步： 精鍊導覽列
+##*2.*調整選單
 
-考量到 "idea" 是 app 裡最重要的東西，我們即將把 "New idea" 按鈕放到導覽列，讓人馬上可以找到。
+考量到 "idea" 是 app 裡最重要的東西，我們把 "New idea" 按鈕放到選單吧，讓人馬上可以找到。
 
-開啟 `app/views/layouts/application.html.erb`，在這行下面
+打開 `app/views/layouts/application.html.erb`，在這行下面
 
 {% highlight erb %}
 <li class="active"><a href="/ideas">Ideas</a></li>
@@ -60,13 +60,13 @@ body { padding-top: 60px; }
 <li ><%= link_to 'New Idea', new_idea_path %></li>
 {% endhighlight %}
 
-## 第三步：設計 idea 清單
+##*3.*設計 idea 清單
 
-現在是時候讓我們的 idea 清單看起來專業點了。我們要把版面的從表格換到 div。
+現在是時候讓我們的 idea 清單，看起來專業點了。我們要把版面從表格換到 div。
 
 **教練：** 講一下表格與 div 的差別。
 
-用編輯器打開 `app/views/ideas/index.html.erb`，把整個檔案換成這個
+用編輯器打開 `app/views/ideas/index.html.erb`，把整個檔案換成下面這段程式碼：
 
 {% highlight erb %}
 <h1>Listing ideas</h1>
@@ -86,13 +86,13 @@ body { padding-top: 60px; }
 
 **教練：** 逐行解釋這段新的程式，並講講什麼是 Bootstrap 的 12 網格版面。
 
-重新整理！我們獲得了一個可愛的 idea 清單。按下 "New Idea" 按鈕，用真實的文字與漂亮的圖片加入更多想法吧！─ 網頁有越多內容，看起就會更好。現代網頁設計原理之一：內容是最好的裝飾品。
+重新整理看看！idea 清單變可愛了呢。按下 "New Idea" 按鈕，用真實的文字與漂亮的圖片加入更多想法吧！─ 網頁有越多內容，看起就會更好。現代網頁設計原理之一：內容是網頁最好的裝飾品。
 
-## 第四步：設計 idea 的細節頁面
+##*4.*設計 idea 的細節頁面
 
-按下 idea 的標題，妳會被帶到 idea 的細節頁面。現在看起來仍然是用 Rails 鷹架產生的，讓我們來把它變更好吧。
+按下 idea 的標題，網頁會跳到 idea 的細節頁面。現在看起來仍然是用 Rails Scaffold 產生的，讓我們來把它變得更好吧。
 
-用編輯器打開 `app/views/ideas/show.html.erb` 把整個檔案換成這個
+用編輯器打開 `app/views/ideas/show.html.erb` 把整個檔案的內容換成下面的程式碼：
 
 {% highlight erb %}
 <p id="notice"><%= notice %></p>
@@ -114,13 +114,10 @@ body { padding-top: 60px; }
 </div>
 {% endhighlight %}
 
-
 **教練：** 逐行解釋這段新的程式碼。
 
-## 下一步
+## 下一步？
 
-* 使用新學到的知識來設計新的想法
-
-* 如果妳想的話，可以加入更多設計。
-
-* 按照其它指南學更多 Rails
+* 使用新學的知識來設計新的想法
+* 妳想要的話，可以加入更多設計哦
+* 閱讀其它指南學習更多 Rails

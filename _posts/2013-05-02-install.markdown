@@ -4,12 +4,11 @@ title: Rails Girls 安裝食譜
 permalink: install
 ---
 
-# 給 Rails Girls 的安裝食譜
-<span class="muted">烘焙時間：聽 5 分鐘 / 做 15-30 分鐘</span>
+# 獻給 Rails Girls 的安裝食譜
 
-要用 Ruby on Rails 打造 app，需要安裝某些軟體並設定電腦的開發環境。
+要用 Ruby on Rails 打造 APP，需要安裝某些軟體並設定電腦的開發環境。
 
-選擇適合妳的作業系統的安裝教學。要是碰到任何問題，別慌張！歡迎在活動中跟教練說，讓我們一起解決。
+選擇適合妳作業系統的安裝教學。要是碰到任何問題，別慌張！歡迎在活動中跟教練說，讓我們一起解決。
 
 * [OS X 安裝教學](#setup_for_os_x)
 * [Windows 安裝教學](#setup_for_windows)
@@ -21,25 +20,86 @@ permalink: install
 
 **第一步** 先檢查作業系統的版本。
 
-點選 Apple 選單並選擇 *關於這台 Mac*。
+點選左上角的 Apple 圖案，選擇**關於這台 Mac**。
 
 ![Apple 選單](/images/1.png "Apple menu")
 
-**第二步** 在這個視窗妳可以找到作業系統的版本。如果妳的版本是 10.6、10.7 或 10.8，則本指南就是為妳而寫的。如果是其它版本，我們可在活動中幫妳安裝。
+**第二步** 在這個視窗妳可以找到作業系統的版本。如果妳的版本是 10.6、10.7、10.8 或 10.9，則妳的作業系統就是 OS X。如果是其它老舊的版本，我們可以在活動中幫妳安裝。
 
 ![關於這台 Mac 對話框](/images/2.png "About this Mac dialog")
 
-**Step 3.** 根據作業系統版本下載對應的 Rails 安裝工具：
+**Step 3-A.** 根據作業系統版本下載對應的 RailsInstaller (10.6、10.7、10.8）：
 
-* [給 10.7 與 10.8 的 Rails 安裝工具](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.7.app.tgz) <span class="muted">(325MB)</span>
-* [給 10.6 的 Rails 安裝工具](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.6.app.tgz) <span class="muted">(224MB)</span>
+* [給 10.7 與 10.8 的 RailsInstaller](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.7.app.tgz) <span class="muted">(325MB)</span>
+* [給 10.6 的 RailsInstaller](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.6.app.tgz) <span class="muted">(224MB)</span>
 
-按兩下剛剛下載的檔案，會解壓縮到目前的目錄。按兩下剛解開的 'RailsInstaller-1.0.3-osx-10.7.app' 或 'RailsInstaller-1.0.3-osx-10.6.app' 並按照步驟安裝。安裝完畢會開啟有著 'Rails Installer OS X' 標題的讀我檔案。請忽略這個檔案所要求的步驟。
+按兩下剛剛下載的檔案，會解壓縮到目前的目錄。按兩下剛解開的 `RailsInstaller-1.0.4-osx-10.7.app` 或 `RailsInstaller-1.0.4-osx-10.6.app` 並按照步驟安裝。安裝完畢會開啟有著 `Rails Installer OS X` 標題的讀我檔案。請忽略這個檔案所要求的步驟。
 
-如果 Rails 版本不是最新的（目前是 4.0.0），妳可以在終端用下面的命令來更新 Rails。
+如果 Rails 版本不是最新的，妳可以在終端機輸入下面的命令來更新 Rails。
 
 {% highlight sh %}
 gem update rails --no-ri --no-rdoc
+{% endhighlight %}
+
+確認 Rails 有沒有安裝成功，試試在終端機輸入下面的命令：
+
+{% highlight sh %}
+rails new railsgirls
+{% endhighlight %}
+
+**Step 3-B.** 使用 rbenv 安裝（10.9）：
+
+如果妳的作業系統是 10.9.x，我們來安裝 homebrew 與 rbenv。
+
+3-B-1. 安裝命令行工具
+
+打開終端機輸入下面命令：
+
+{% highlight sh %}
+xcode-select --install
+{% endhighlight %}
+
+3-B-2. 安裝 [Homebrew](http://brew.sh/index_zh-tw.html)：
+
+{% highlight sh %}
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+{% endhighlight %}
+
+3-B-3. 安裝 [rbenv](https://github.com/sstephenson/rbenv)：
+
+{% highlight sh %}
+brew update
+brew install rbenv ruby-build
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.bash_profile
+source ~/.bash_profile
+{% endhighlight %}
+
+3-B-4. 用 rbenv 安裝 Ruby：
+
+用 `rbenv install -l` 可以看有那些版本的 Ruby 可以安裝。
+
+{% highlight sh %}
+rbenv install 2.1.1
+{% endhighlight %}
+
+如果遇到 `OpenSSL::SSL::SSLError: ... : certificate verify failed` 錯誤，試試：
+
+{% highlight sh %}
+brew install curl-ca-bundle
+cp /usr/local/opt/curl-ca-bundle/share/ca-bundle.crt `ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE'`
+{% endhighlight %}
+
+3-B-5. 設定預設使用的 Ruby:
+
+{% highlight sh %}
+rbenv global 2.1.1
+{% endhighlight %}
+
+3-B-6. 安裝 rails:
+
+{% highlight sh %}
+gem install rails
 {% endhighlight %}
 
 **最後一步** 妳會需要文字編輯器來編輯程式碼檔案。我們推薦使用 Sublime Text 編輯器。
@@ -52,15 +112,19 @@ gem update rails --no-ri --no-rdoc
 
 ## Setup for Windows
 
-下載 [RailsInstaller](https://github.com/railsinstaller/railsinstaller-windows/releases/download/2.2.2/railsinstaller-2.2.2.exe) 並執行。使用預設選項，一直按下一步。
+下載 [RailsInstaller](https://s3.amazonaws.com/railsinstaller/Windows/railsinstaller-2.2.2.exe) 並執行。使用預設選項，一直按下一步。
 
-如果 Rails 版本不是最新的（目前是 4.0.0），妳可以在 Ruby on Rails 的命令提示字元（"Command Prompt with Ruby on Rails"）輸入下面的命令來更新 Rails。
+如果 Rails 版本不是最新的，妳可以在 Ruby on Rails 的命令提示字元（"Command Prompt with Ruby on Rails"）輸入下面的命令來更新 Rails。
 
 {% highlight sh %}
 gem update rails --no-ri --no-rdoc
 {% endhighlight %}
 
-如果妳想[將 app 放到 Heroku](/heroku)，需要安裝 Git 與 SSH-keys。
+確認 Rails 有沒有安裝成功，試試在命令提示字元輸入下面的命令：
+
+{% highlight sh %}
+rails new railsgirls
+{% endhighlight %}
 
 **最後一步** 妳會需要文字編輯器來編輯程式碼。我們推薦使用 Sublime Text 編輯器。
 
@@ -72,18 +136,24 @@ gem update rails --no-ri --no-rdoc
 
 ## Setup for Linux
 
-要安裝 Ruby on Rails 開發環境，只需要根據妳的 Linux 發行版，複製下列命令到終端並按 Enter。享受文字在妳的終端飛舞吧！安裝會花點時間。開始之前，去拿杯飲料吧。
+要安裝 Ruby on Rails 開發環境，只需要根據妳的 Linux 發行版，複製下面的命令到終端機並按 Enter。享受文字在妳的終端飛舞吧！安裝會花點時間。鼓勵妳在開始之前，去拿杯提神飲料。
 
-**Ubuntu：**
+**Ubuntu**
 
 {% highlight sh %}
-bash < <(curl -s https://raw.github.com/railsgirls-tw/railsgirls-tw.github.io/master/tool/rails-install-ubuntu.sh)
+bash < <(curl -s https://raw.github.com/railsgirls/installation-scripts/master/rails-install-ubuntu.sh)
 {% endhighlight %}
 
-**Fedora：**
+**Fedora**
 
 {% highlight sh %}
-bash < <(curl -s https://raw.github.com/railsgirls-tw/railsgirls-tw.github.io/master/tool/rails-install-fedora.sh)
+bash < <(curl -s https://raw.github.com/railsgirls/installation-scripts/master/rails-install-fedora.sh)
+{% endhighlight %}
+
+確認 Rails 有沒有安裝成功，試試在命令提示字元輸入下面的命令：
+
+{% highlight sh %}
+rails new railsgirls
 {% endhighlight %}
 
 **最後一步** 妳會需要文字編輯器來編輯程式碼。我們推薦使用 Sublime Text 編輯器。
