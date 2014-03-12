@@ -79,8 +79,12 @@ permalink: design-html-css
 
     ```css
     footer {
-        background-color: #ebebeb;
-        padding: 30px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px 0;
+        background-color: #f5f5f5;
+        height: 60px;
     }
     ```
 
