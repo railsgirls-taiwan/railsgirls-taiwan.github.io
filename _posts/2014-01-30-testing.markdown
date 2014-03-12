@@ -1,128 +1,149 @@
 ---
 layout: default
-title: You better check you app, before you wreck your app
+title: 最好先檢查，避免 App 壞掉。
 permalink: testing-rspec
 ---
 
-# Test your app with RSpec
+# 使用 RSpec 來測試 App
 
-*Created by Clemens Helm, [@clemenshelm](https://twitter.com/clemenshelm) and Floor Drees, [@floordrees](https://twitter.com/floordrees)* 
+*Created by Clemens Helm, [@clemenshelm](https://twitter.com/clemenshelm) and Floor Drees, [@floordrees](https://twitter.com/floordrees)*
 
-RSpec is a Ruby testing framework, that describes our application's behavior in a syntax that doesn't look much like Ruby. It outputs test results in your terminal, so you'll test your reading skills as well (pun intended).
+*Translation by JuanitoFatas, [@JuanitoFatas](https://twitter.com/juanitofatas)*
 
-__COACH__: Talk about testing and Behavior-Driven Development.
+RSpec 是 Ruby 語言的測試框架之一，使用看起來很像 Ruby 的語法，來描述 App 的行為。測試結果會輸出在終端機，所以妳也可以測試妳的閱讀技巧呢（開個玩笑）。
 
-### Install rspec
+__教練：__ 講講測試與行為驅動開發是什麼。
 
-For starters, let's install RSpec and all of its dependencies. 
+### 安裝 RSpec
+
+安裝 RSpec 與所有依賴的 RubyGems：
 {% highlight sh %}
 gem install rspec
 {% endhighlight %}
 
-Then we call
+接著到終端機裡執行：
+
 {% highlight sh %}
 rspec --init
 {% endhighlight %}
 
-in our project directory. This creates `spec_helper.rb` in the spec folder, and `.rspec`.
+這條命令會在專案目錄下產生 `.rspec`，以及 `spec` 目錄下產生 `spec_helper.rb`。
 
-Rubyists often use the words 'test' and 'specification' interchangeably, that's why you'll store your tests in the 'specs' folder. Save your test as `idea_spec.rb` (`<name_of_spec>_spec.rb`).
+Rubyist 通常交互使用“測試”（test）與“規範”（specification）這兩個詞，這也是為什麼測試是存在 `spec` 目錄下。
 
-Inside that new file, write:
-  
-{% highlight ruby %}
-require "spec_helper"
-require "idea"
-{% endhighlight %}
+在 `spec` 目錄建立一個 `idea_spec.rb` 檔案：
 
-Next, let's describe one of our specifications
-{% highlight ruby %}
-describe Idea do
-  it "has a title" # your examples (tests) go here
-end
-{% endhighlight %}
-
-In your terminal run
 {% highlight sh %}
-rspec spec/lib/idea_spec.rb
+touch spec/models/idea_spec.rb
 {% endhighlight %}
 
-which will output that your test is pending as it's not yet implemented. 
+填入以下內容：
 
-__COACH__: Talk about googling terminal output.
+{% highlight ruby %}
+require 'spec_helper'
+require 'idea'
+{% endhighlight %}
 
-Let's do something about that!
+接著讓我們來描述一個“規範”（寫一個測試）看看：
+
 {% highlight ruby %}
 describe Idea do
-  it "has a title" do # yep, you can totally use 'it'
+  it 'has a name' # your examples (tests) go here
+end
+{% endhighlight %}
+
+在終端機執行：
+
+{% highlight sh %}
+rspec spec/models/idea_spec.rb
+{% endhighlight %}
+
+會告訴你測試處於 pending 狀態，因為測試的內容還沒實作。
+
+__教練：__ 講講如何使用終端機的輸出來 Google 解決問題
+
+讓我們填入具體的測試內容！
+
+{% highlight ruby %}
+describe Idea do
+  it "has a name" do # yep, you can totally use 'it'
     idea = Idea.new # creating a new idea 'instance'
-    idea.title.should be_true # this is our expectation
+    idea.name.should be_true # this is our expectation
   end
 end
 {% endhighlight %}
 
-should give you a more satisfying output.
+啊哈！妳的第一個測試！
 
-####Refactoring
+__教練：__ 逐行解釋剛剛的測試
 
-You could actually also write:  
+#### 重構
 
-{% highlight ruby %}
-describe Idea do
-  its(:title) { should be_true }
-end
-{% endhighlight %}
-
-which looks a lot nicer, but there's a lot of magic involved. For now it's probably jyst nice to know that we can 'refactor' those big chuncks of code into smaller bits with a little more experience.  
-
-__COACH__: Talk a bit about refactoring.  
-
-#### Marking to-do's with tests
-
-Yeah! To-do lists. Awesome. A nifty RSpec feature is the functionality to mark certain tests as pending. 
-
-Leaving out the `do` and the `end` in the example body, like so
-
-{% highlight ruby %}
-it "has a title"
-{% endhighlight %}
-
-will mark a test as pending. For bigger applications, where you want to tackle one test at a time, you can also add an `x` in front of an example, making it read 
-{% highlight ruby %}
-describe Idea do  
-  xit "has a title" do
-end
-{% endhighlight %}
-
-or use the word `pending` in your example.
-
-### Behavior-Driven Development
-
-Normally we would go about BDD testing in a slightly different way. Thinking about the application we want to build, we'll write down our expectations and then start building step by step, with the specifications in mind. 
-
-We'd first write 
+剛剛那兩行其實也可以寫成一行：
 
 {% highlight ruby %}
 describe Idea do
-  it "has a title"
-    idea = Idea.new 
-    idea.title.should be_true 
-    # or, alternatively: idea.title.should == true
+  its(:name) { should be_true }
+end
+{% endhighlight %}
+
+這看起來好多了，但背後隱藏了許多魔法。現在我們只要知道，“重構”是根據經驗把大塊程式碼轉成小塊程式碼。
+
+__教練：__ 講講什麼是重構
+
+#### 讓測試稍後再測（待辦事項）
+
+耶！待辦事項。太棒了！一個俏皮的 RSpec 功能，讓妳可以把特定的測試標註為“待辦”（pending）。
+
+怎麼樣把一個測試變成待辦事項呢？
+
+沒有 `do` 與 `end` 的 `it`：
+
+{% highlight ruby %}
+it "has a name"
+{% endhighlight %}
+
+或是在 `it` 前面加上 `x`：
+
+{% highlight ruby %}
+describe Idea do
+  xit "has a name" do
+    ...
   end
 end
 {% endhighlight %}
 
-and only then create a file named `idea.rb` introducing the idea class
+或者是把 `it` 換成 `pending` 也可以哦！
 
 {% highlight ruby %}
-class Idea
-attr_accessor  :title
+describe Idea do
+  pending "has a name" do
+    ...
+  end
 end
 {% endhighlight %}
 
-as running `rspec spec/lib/idea_spec.rb` in your terminal before you've implemented that class will throw you an error. Luckely, errors are nothing to be afraid of. RSpec errors actually help you write (the necessary) code! 
+### 行為驅動開發
 
-Try and write tests for the follow up guides to check if you're implementing ALL the right things. 
+行為驅動開發呢，通常是先想想我們想要做什麼，寫下期望會做的事（測試），接著心中想著測試，開始一步一步做出來。
+
+我們可能會先寫 Idea Model 的測試 (`touch spec/models/idea_spec.rb`)：
+
+{% highlight ruby %}
+describe Idea do
+  it "has a name"
+    idea = Idea.new
+    idea.name.should be_true
+    # or, alternatively: idea.name.should == true
+  end
+end
+{% endhighlight %}
+
+現在跑測試看看 `rspec spec/models/idea_spec.rb` 會告訴你。幸運的是，錯誤並不可怕，實際上還會幫助妳寫出需要的程式碼呢！
+
+接著便可以實作 Idea Model 了...。
+
+好，試著在之後的活動裡寫測試來檢查妳是否都做對了。
 
 {% highlight ruby %}
 describe Attendee do
@@ -130,6 +151,8 @@ describe Attendee do
 end
 {% endhighlight %}
 
-Just saying.
+開個玩笑的啦！
 
-Happy testing!
+Happy Testing！
+
+__教練：__ 講講測試有什麼優點。
