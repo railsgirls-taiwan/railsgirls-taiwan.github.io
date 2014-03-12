@@ -362,7 +362,7 @@ class Idea < ActiveRecord::Base
 打開 `config/routes.rb` 在第一行的下一行（第二行），加入
 
 {% highlight ruby %}
-root :to => '/ideas'
+root to: redirect('/ideas')
 {% endhighlight %}
 
 用瀏覽器打開網站的根目錄 (root path，也就是 [http://localhost:3000](http://localhost:3000))，看看有沒有改變。
