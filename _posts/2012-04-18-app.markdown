@@ -212,8 +212,8 @@ ruby bin\rails server
 在這行上面加入
 
 {% highlight erb %}
-<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
-<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 {% endhighlight %}
 
 並將這行換成
@@ -261,7 +261,7 @@ ruby bin\rails server
     Rails Girls Taipei 2014
   </div>
 </footer>
-<script src="//railsgirls.com/assets/bootstrap.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 {% endhighlight %}
 
 現在讓我們也來變一下 ideas 表格的風格。打開 `app/assets/stylesheets/application.css` 到最下面加入
@@ -269,8 +269,8 @@ ruby bin\rails server
 {% highlight css %}
 body { padding-top: 100px; }
 footer { margin-top: 100px; }
-table, td, th { vertical-align: middle; border: none; }
-th { border-bottom: 1px solid #DDD; }
+td { text-align: center; padding-left: 10px; }
+th { border-bottom: 1px solid #DDD; padding-left: 20px }
 {% endhighlight %}
 
 修改過後記得要存檔，並重新整理瀏覽器，看看什麼變得不一樣了。妳也可以繼續調整 HTML 與 CSS。
@@ -339,9 +339,10 @@ class Idea < ActiveRecord::Base
 
 在妳的瀏覽器裡，新增一個想法吧，順便貼張圖片。當妳上傳一張圖片，它看起來不像圖片，因為它顯示的是圖片的路徑，所以讓我們讓圖片顯示吧。
 
-打開 `app/views/ideas/show.html.erb` 並將這行
+打開 `app/views/ideas/show.html.erb` 並將這兩行
 
 {% highlight erb %}
+<strong>Picture:</strong>
 <%= @idea.picture %>
 {% endhighlight %}
 
