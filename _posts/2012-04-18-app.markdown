@@ -269,7 +269,7 @@ ruby bin\rails server
 {% highlight css %}
 footer { margin-top: 100px; }
 td { text-align: center; padding-left: 10px; }
-th { border-bottom: 1px solid #DDD; padding-left: 20px }
+th { border-bottom: 1px solid #DDD; padding-left: 20px; }
 {% endhighlight %}
 
 修改過後記得要存檔，並重新整理瀏覽器，看看什麼變得不一樣了。妳也可以繼續調整 HTML 與 CSS。
