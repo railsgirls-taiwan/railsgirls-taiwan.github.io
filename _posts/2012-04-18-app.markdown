@@ -216,13 +216,13 @@ ruby bin\rails server
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 {% endhighlight %}
 
-並將這行換成
+並將這行
 
 {% highlight erb %}
 <%= yield %>
 {% endhighlight %}
 
-這個
+換成這個
 
 {% highlight erb %}
 <div class="container">
