@@ -99,7 +99,7 @@ rbenv global 2.1.1
 3-B-6. 安裝 rails:
 
 {% highlight sh %}
-gem install rails
+gem install rails --no-ri --no-rdoc
 {% endhighlight %}
 
 **最後一步** 妳會需要文字編輯器來編輯程式碼檔案。我們推薦使用 Sublime Text 編輯器。
