@@ -5,6 +5,7 @@ server_port: 4000
 pygments:    true
 markdown:    redcarpet
 permalink:   pretty
+url: http://railsgirls.tw
 maruku:
   use_tex:    false
   use_divs:   false
