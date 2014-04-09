@@ -15,6 +15,9 @@
     {% else %}
       <meta content="website" property="og:type">
     {% endif %}
+    {% if page.url %}
+      <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {% endif %}
     
     {% if page.title %}
       <meta content="{{ page.title }}" property="og:title">
