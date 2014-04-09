@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
+    <meta content="Rails Girls Taiwan" property="og:site_name">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Rails Girls Taiwan</title>
@@ -9,6 +10,17 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="cleartype" content="on">
+    
+    {% if page.title %}
+      <meta content="{{ page.title }}" property="og:title">
+    {% else %}
+      <meta content="{{ site.title }}" property="og:title">
+    {% endif %}
+    {% if page.image %}
+      <meta content="{{ site.url }}/images/posts/{{ page.image }}" property="og:image">
+    {% else %}
+      <meta content="{{ site.url }}/images/RG2014LOGO500x500.jpg" property="og:image">
+    {% endif %}
 
     <link rel="shortcut icon" href="/favicon.png"/>
 
