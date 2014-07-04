@@ -519,4 +519,6 @@ Your Rails Girls team
 * 寄感謝函給教練。
 
 * 寄感謝函給主辦者。
-* 將你們加到 [Rails Girls 地圖](http://rails-girls-map.herokuapp.com/)
+
+* 加入到 [Rails Girls 地圖](http://rails-girls-map.herokuapp.com/)。
+

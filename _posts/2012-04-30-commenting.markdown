@@ -65,7 +65,7 @@ belongs_to :idea
 
 {% highlight erb %}
 <h3>Comments</h3>
-<% @idea.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <div>
     <strong><%= comment.user_name %></strong>
     <br />
@@ -78,6 +78,7 @@ belongs_to :idea
 打開 `app/controllers/ideas_controller.rb` 在 show action 新增這行
 
 {% highlight ruby %}
+@comments = @idea.comments.all
 @comment = @idea.comments.build
 {% endhighlight %}
 
@@ -104,4 +105,4 @@ belongs_to :idea
 </div>
 {% endhighlight %}
 
-就這麼簡單。現在看看之前建立的 idea，妳應該會看到一個可以留言的表單了。
+就這麼簡單。現在看看之前建立的 idea，妳應該會看到一個可以新增、刪除留言的表單了。
