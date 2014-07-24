@@ -45,9 +45,10 @@ tags: [railsgirls railsgirlstaipei rg rails]
 
 ## 紀錄片
 
+-	演講內容[逐字稿](http://audrey.nu/-/2014/04/28/programming-languages-and-rails-girls)<BR/>
 <iframe width="640" height="360" src="//www.youtube.com/embed/Mfve71eWQH0" frameborder="0" allowfullscreen></iframe>
 
-
+-	座談會[逐字稿](http://audrey.nu/-/2014/06/16/railsgirls-panel)<BR/>
 <iframe width="640" height="360" src="//www.youtube.com/embed/E6xIcKTRZ00" frameborder="0" allowfullscreen></iframe>
 
 ## STAFF
