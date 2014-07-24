@@ -31,7 +31,9 @@ Rails Girls 社群為Linda Liukas 與 Karri Saarinen 創辦，以「幫助女生
 <iframe width="640" height="480" src="//www.youtube.com/embed/9jZTbqokELM" frameborder="0" allowfullscreen></iframe>
 </center>
 ##第三屆活動 紀錄片(由Anna Su製作)
+<center>
 <iframe width="640" height="480" src="//www.youtube.com/embed/ve9NKoSgjLk" frameborder="0" allowfullscreen></iframe>
+</center>
 
 ### 2014的Rails Girls活動贊助方案
 
