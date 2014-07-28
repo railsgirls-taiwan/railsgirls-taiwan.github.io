@@ -76,4 +76,4 @@ A3: Yes. if so, tell us your specific arrival/departure date, to reserve flight 
 A4: Maybe. You should submit request to RailsGirls Tokyo by yourself.
 
 #### Q5: I have more questions.
-A5: Please feel fee to contact [Rails Girls Taipei organizer team](mailto:contact@railsgirls.tw).
+A5: Please feel free to contact [Rails Girls Taipei organizer team](mailto:contact@railsgirls.tw).
