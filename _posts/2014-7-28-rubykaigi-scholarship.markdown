@@ -4,7 +4,7 @@ title: "RubyKaigi 2014 獎學金辦法"
 category:
 tags: [call_for_sponsor]
 ---
-# RubyKaigi 2014 獎金辦法
+# RubyKaigi 2014 獎學金辦法
 
 [RubyKaigi 2014](http://rubykaigi.org/2014)  將於今年的 9/18 - 20 日於日本東京舉辦，本次由 Heroku，日本 Rails Girls 社群，Asakusa.rb 社群與台灣 Rails Girls 社群共同舉辦，將提供獎助學金給台灣的 Rails Girl 相關人士，以促進國際間 Rails Girls 的經驗與友誼交流。
 
