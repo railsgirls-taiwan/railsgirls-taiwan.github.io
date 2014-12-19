@@ -32,7 +32,7 @@ gem 'carrierwave'
 加入
 
 {% highlight ruby %}
-gem 'mini_magick', '3.7.0'
+gem 'mini_magick', '3.8.0'
 {% endhighlight %}
 
 接著到終端裡輸入
@@ -57,7 +57,7 @@ bundle
 
 {% highlight ruby %}
 version :thumb do
-  process :resize_to_fill => [150, 150]
+  process :resize_to_fill => [50, 50]
 end
 {% endhighlight %}
 
