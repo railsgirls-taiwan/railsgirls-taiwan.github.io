@@ -112,7 +112,7 @@ gem install rails --no-ri --no-rdoc
 
 ## Setup for Windows
 
-下載 [RailsInstaller](https://s3.amazonaws.com/railsinstaller/Windows/railsinstaller-2.2.2.exe) 並執行。使用預設選項，一直按下一步。
+下載最新的 [RailsInstaller](http://railsinstaller.org/en) 並執行。使用預設選項，一直按下一步。
 
 如果 Rails 版本不是最新的，妳可以在 Ruby on Rails 的命令提示字元（"Command Prompt with Ruby on Rails"）輸入下面的命令來更新 Rails。
 
