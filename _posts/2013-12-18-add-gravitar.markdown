@@ -20,14 +20,14 @@ permalink: gravatar
 
 打開專案的 `Gemfile`，在 `devise` 下面新增：
 
-{% highlight erb %}
+{% highlight ruby %}
 gem 'gravtastic'
 {% endhighlight %}
 
 接著到終端機，輸入：
 
 {% highlight sh %}
-bundle
+bundle install
 {% endhighlight %}
 
 Gravtastic Gem 就裝好了。記得要重新啟動 Rails 伺服器哦。
@@ -36,7 +36,7 @@ Gravtastic Gem 就裝好了。記得要重新啟動 Rails 伺服器哦。
 
 打開 `app/models/user.rb` 加入這兩行
 
-{% highlight sh %}
+{% highlight ruby %}
 include Gravtastic
 gravtastic
 {% endhighlight %}
@@ -51,7 +51,7 @@ gravtastic
 <% if user_signed_in? %>
 {% endhighlight %}
 
-下面的 `<% else %>`
+下面的
 
 {% highlight erb %}
 <% else %>
