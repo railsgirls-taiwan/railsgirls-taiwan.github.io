@@ -359,7 +359,7 @@ class Idea < ActiveRecord::Base
 
 如果妳試著開啟 [http://localhost:3000](http://localhost:3000)，它仍顯示 "Welcome aboard" 頁面。讓我們來把這頁導到 ideas 頁面。
 
-打開 `config/routes.rb` 在第一行的下一行（第二行），加入
+打開 `config/routes.rb` 在第一行下面加入
 
 {% highlight ruby %}
 root to: redirect('/ideas')
