@@ -4,25 +4,27 @@ title: Rails Girls Sinatra tutorial
 permalink: sinatra-app
 ---
 
-# Create your first voting app with Sinatra
+# 使用 Sinatra 來建立妳的第一個投票 App
 
 *Created by Piotr Szotkowski, [@chastell](https://twitter.com/chastell)*
 
-We will create a little voting app from scratch using a web development framework for Ruby called Sinatra, which is much like Ruby on Rails. Just another tool to get the job done really, and a fun one too!
+*Translation by Daryl Chen, [@otaqato](https://twitter.com/otaqato)*
 
-Imagine your group of friends is figuring out what to order for your weekly movie watching marathon. With the many fast food options out there, this can become quite a discussion. This is where our app comes into play!
+我們將會使用一個網站開發框架叫做 Sinatra 從無到有的來建立一個小型的投票程式，它跟 Ruby on Rails 很像，是另一個可以完成這件事的工具，一樣也很有趣。
 
-__COACH__: Explain shortly what [Sinatra](http://www.sinatrarb.com) is.
+想像妳和一群朋友在想週末的電影馬拉松要看什麼、要叫什麼外送來吃？這時候它就派上用場了！
 
-## Install Sinatra
+__教練__：簡短的解釋什麼是 [Sinatra](http://www.sinatrarb.com)。
 
-Remember how we needed to install Ruby on Rails? Similarly we need to install Sinatra:
+## 安裝 Sinatra
+
+還記得我們是怎麼安裝 Ruby on Rails？安裝 Sinatra 的方式也一樣：
 
 `gem install sinatra`
 
-### Create your first Sinatra app
+### 建立妳的第一個 Sinatra app
 
-Create a `suffragist.rb` file with the following contents:
+建立一個檔案叫 `suffragist.rb` 包含以下內容：
 
 {% highlight ruby %}
 require 'sinatra'
@@ -32,27 +34,19 @@ get '/' do
 end
 {% endhighlight %}
 
+實際上妳可以任意命名這個 Ruby 檔案，用 `vote.rb` 也可以，不過 [suffragist](http://zh.wikipedia.org/wiki/%E9%80%89%E4%B8%BE%E6%9D%83#.E5.A9.A6.E5.A5.B3.E9.81.B8.E8.88.89.E6.AC.8A) 是根據一個超級重要的女權運動而來，那就用這個名字吧！
 
-You can actually call your Ruby file whatever you'd like. `vote.rb` for instance would totally work as well, when used consistently. But [suffragist](http://www.vocabulary.com/dictionary/suffragist) actually references to a super important event in the women's rights movement, so let's just go with that for now!  
+### 執行妳的 App
 
+切換到 App 所在的目錄並執行 `ruby suffragist.rb` 指令，
+現在瀏覽 [localhost:4567](http://localhost:4567) 妳應該可以看到一個『Hello, voter!』頁面，
+這意味著 App 運作得很順利，在進行下一步之前，先在終端機裡按下 `ctrl-c` 終止運作中的 App。
 
-### Run your app
+__教練__：解釋 POST 和 GET 方法，以及如何與瀏覽器交流。
 
-Go to the directory where you put your app and run `ruby suffragist.rb`.
-Now you can visit [localhost:4567](http://localhost:4567). You should
-see a ‘Hello, voter!’ page, which means that the generation of your new
-app worked correctly. Hit `ctrl-c` in the terminal to quit the server.
+### 新增視圖（View）到首頁
 
-__COACH__: Explain POST and GET methods, and how to communicate with the browser.
-
-
-
-### Add the index view
-
-To keep everything in order let’s make
-a directory for our views (and name it `views`).
-
-Put this code into an `index.erb` file in the `views` directory:
+為了讓一切井然有序，我們建立一個資料夾 `views`，並且在裡面建立一個檔案 `index.erb`，內容如下：
 
 {% highlight erb %}
 <!DOCTYPE html>
@@ -81,7 +75,7 @@ Put this code into an `index.erb` file in the `views` directory:
 </html>
 {% endhighlight %}
 
-And into `suffragist.rb`:
+在 `suffragist.rb` 裡加入：
 
 {% highlight ruby %}
 Choices = {
@@ -92,7 +86,7 @@ Choices = {
 }
 {% endhighlight %}
 
-Change the `get` action:
+改變 `get` 動作的內容：
 
 {% highlight ruby %}
 get '/' do
@@ -100,18 +94,13 @@ get '/' do
 end
 {% endhighlight %}
 
-Run `ruby suffragist.rb`, check your
-results and quit the server with `ctrl-c`.
+執行 `ruby suffragist.rb`，看看結果，然後 `ctrl-c` 終止運作中的 App。
 
-__COACH__: Talk a little about HTML and erb. Explain
-templates. Explain what global constants are.
+__教練__：聊聊 HTML 和 erb，解釋 templates 和全域常數的意思
 
+### 樣板
 
-
-### Templates
-
-Adjust the `index.erb` file in the `views`
-directory and add the `<h1>…</h1>` line:
+編輯 `views` 裡的 `index.erb` 檔案，加入 `<h1>...</h1>` 這一行，像下面這樣：
 
 {% highlight erb %}
   <body class='container'>
@@ -119,7 +108,7 @@ directory and add the `<h1>…</h1>` line:
     <p>What's for dinner?</p>
 {% endhighlight %}
 
-Change the `get` action:
+改變 `get` 動作的內容：
 
 {% highlight ruby %}
 get '/' do
@@ -128,14 +117,11 @@ get '/' do
 end
 {% endhighlight %}
 
-__COACH__: Explain what instance variables are and
-how Sinatra makes them visible in the views.
+__教練__：解釋實體變數是什麼，以及 Sinatra 如何讓它們出現在頁面上。
 
+### 替 POST 結果增加一點能力
 
-
-### Add the ability to POST results
-
-Put this into `suffragist.rb`:
+把以下內容加進 `suffragist.rb`：
 
 {% highlight ruby %}
 post '/cast' do
@@ -145,8 +131,7 @@ post '/cast' do
 end
 {% endhighlight %}
 
-Create a new file in the `views` directory, `cast.erb`,
-and put there some HTML with embedded Ruby code:
+在 `views` 資料夾裡新增檔案 `cast.erb` 並放進一點 HTML 和 Ruby 程式，內容如下：
 
 {% highlight erb %}
 <!DOCTYPE html>
@@ -164,15 +149,11 @@ and put there some HTML with embedded Ruby code:
 </html>
 {% endhighlight %}
 
-__COACH__: Explain how POST works. How to catch what
-was sent in the form? Where do `params` come from?
+__教練__：解釋 POST 是怎麼運作，要如何接收從表單寄出的內容，`params` 從哪裡來？
 
+### 整理程式碼成一般常見的版型
 
-
-### Factor out a common layout
-
-Create a `layout.erb` file in the `views`
-directory. Put the following in there:
+在 `views` 資料夾裡建立一個檔案 `layout.erb`，並加入以下內容：
 
 {% highlight erb %}
 <!DOCTYPE html>
@@ -189,17 +170,13 @@ directory. Put the following in there:
 </html>
 {% endhighlight %}
 
-Remove the above part from the other two templates
-(`index.erb` and `cast.erb` in the `views` directory).
+從另外兩個樣板移除和上面重複的內容（分別是 `index.erb` 和 `cast.erb` 在 `views` 資料夾裡）。
 
-__COACH__: Talk about the structure of HTML documents and how factoring
-out common code work in general. Explain what `yield` does.
+__教練__：聊聊 HTML 的文件架構和一般整理程式碼的方式，解釋 `yield` 的意思。
 
+### 加入投票結果路徑和投票結果頁面
 
-
-### Add the results route and the results view
-
-Paste the following code into `suffragist.rb`:
+將下列程式碼貼到 `suffragist.rb`：
 
 {% highlight ruby %}
 get '/results' do
@@ -208,7 +185,7 @@ get '/results' do
 end
 {% endhighlight %}
 
-Create a new file in the `views` directory, called `results.erb`.
+在 `views` 資料夾裡建立一個檔案 `results.erb`，內容如下：
 
 {% highlight erb %}
 <table class='table table-hover table-striped'>
@@ -223,26 +200,21 @@ Create a new file in the `views` directory, called `results.erb`.
 <p><a href='/'>Cast more votes!</a></p>
 {% endhighlight %}
 
-Run `ruby suffragist.rb`, check
-your results and quit the server with `ctrl-c`.
+執行 `ruby suffragist.rb`，看看結果，然後 `ctrl-c` 終止運作中的 App。
 
-__COACH__: Explain HTML tables and how how the
-missing values from the hash default to zero.
+__教練__：解釋 HTML 表格以及票數為何為零。
 
+### 使用 YAML::Store 保存投票結果
 
+該是來點新玩意了，讓我們來保存投票結果。
 
-### Persist the results using YAML::Store
-
-Time for something new! Let’s store our choices.
-
-Add the following to the top of `suffragist.rb`:
+在 `suffragist.rb` 的最上面加上以下內容：
 
 {% highlight ruby %}
 require 'yaml/store'
 {% endhighlight %}
 
-Add some more code into `suffragist.rb` – replace
-`post '/cast'` and `get '/results'` with the following:
+將下列程式碼加入 `suffragist.rb` ，用它們取代 `post '/cast'` 以及 `post '/results'`：
 
 {% highlight ruby %}
 post '/cast' do
@@ -265,28 +237,22 @@ get '/results' do
 end
 {% endhighlight %}
 
-__COACH__: Explain what YAML is.
+__教練__：解釋什麼是 YAML。
 
+### 看看投完票的時候，YAML 檔案是如何變化的
 
-### See how the YAML file changes when votes are cast
+我們打開 `votes.yml`，接著投票，然後再檢查 `votes.yml` 一次
 
-Let’s open `votes.yml`. And vote. And check again.
+__教練__：或許會有些學員忘了把伺服器關掉再執行，這是與學員一起尋找解答的好機會，學員不用為了懂得如何結束程式而自行尋找解答。
 
-__COACH__: There will be situations when one or more students will
-forget to quit the server before running it again. It’s a good
-opportunity to search the Internet for a solution. They don’t
-have to know everything about killing processes to find a solution.
+__教練__：在最後稍微解釋一下 Sinatra 與 Rails 的差異。
 
-__COACH__: In the end explain shortly the differences between Sinatra and Rails.
+## 在 App 裡發揮妳的創意
 
+用妳覺得適合的方式，嘗試改變 App 的內容：
 
-
-## Play with the app
-
-Try to change things in the app in any way you see fit:
-
-* Add some additional logic to the views.
-* Redirect to the results outright.
-* Add other votings; how would the YAML file need to change?
-* Try to style the file in different ways.
+* 為頁面加上額外的邏輯
+* 投完票直接顯示投票結果
+* 增加其他投票主題；YAML 檔案要如何應對新功能的變化
+* 嘗試以不同方式設計檔案
 
