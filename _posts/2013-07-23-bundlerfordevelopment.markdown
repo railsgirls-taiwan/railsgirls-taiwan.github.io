@@ -12,7 +12,7 @@ permalink: bundlerfordevelopment
 
     按下 fork 按鈕。
 
-    Fork Bundler ，才能將妳的修改發 pull requests 回去。
+    Fork Bundler ，才能將妳的修改發 Pull Requests 回去。
 
 <p>
 <img src="../images/fork1.png" />
