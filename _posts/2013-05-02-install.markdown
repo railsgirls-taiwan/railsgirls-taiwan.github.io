@@ -13,100 +13,109 @@ permalink: install
 * [OS X 安裝教學](#setup_for_os_x)
 * [Windows 安裝教學](#setup_for_windows)
 * [Linux 安裝教學](#setup_for_linux)
+* [其他替代方案](#virtual-machine)
+* [使用雲端服務 - 免安裝](#using-a-cloud-service)
 
 <hr />
 
 ## Setup for OS X
 
-**第一步** 先檢查作業系統的版本。
+### *1.* 先檢查作業系統的版本。
 
 點選左上角的 Apple 圖案，選擇**關於這台 Mac**。
 
 ![Apple 選單](/images/1.png "Apple menu")
 
-**第二步** 在這個視窗妳可以找到作業系統的版本。如果妳的版本是 10.6、10.7、10.8、10.9、10.10 或 10.11，則妳的作業系統就是 OS X。如果是其它老舊的版本，我們可以在活動中幫妳安裝。
+### *2.* 在這個視窗妳可以找到作業系統的版本。如果妳的版本是 10.6、10.7、10.8、10.9、10.10 或 10.11，則妳的作業系統就是 OS X。如果是其它老舊的版本，我們可以在活動中幫妳安裝。
 
 ![關於這台 Mac 對話框](/images/2.png "About this Mac dialog")
 
-**Step 3-A.** 根據作業系統版本下載對應的 RailsInstaller (10.6、10.7、10.8）：
+### *3a.* OS X 版本 10.9 或更高
 
-* [給 10.7 與 10.8 的 RailsInstaller](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.7.app.tgz) <span class="muted">(325MB)</span>
-* [給 10.6 的 RailsInstaller](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.6.app.tgz) <span class="muted">(224MB)</span>
+If your version number starts with 10.9 or 10.10, follow these steps. We are installing homebrew and rbenv.
 
-按兩下剛剛下載的檔案，會解壓縮到目前的目錄。按兩下剛解開的 `RailsInstaller-1.0.4-osx-10.7.app` 或 `RailsInstaller-1.0.4-osx-10.6.app` 並按照步驟安裝。安裝完畢會開啟有著 `Rails Installer OS X` 標題的讀我檔案。請忽略這個檔案所要求的步驟。
-
-如果 Rails 版本不是最新的，妳可以在終端機輸入下面的命令來更新 Rails。
-
-{% highlight sh %}
-gem update rails --no-ri --no-rdoc
-{% endhighlight %}
-
-確認 Rails 有沒有安裝成功，試試在終端機輸入下面的命令：
-
-{% highlight sh %}
-rails new railsgirls
-{% endhighlight %}
-
-**Step 3-B.** 使用 rbenv 安裝（10.9）：
-
-如果妳的作業系統是 10.9.x，我們來安裝 homebrew 與 rbenv。
-
-3-B-1. 安裝命令行工具
-
-打開終端機輸入下面命令：
+#### *3a1.* 在終端機安裝命令列工具
 
 {% highlight sh %}
 xcode-select --install
 {% endhighlight %}
 
-3-B-2. 安裝 [Homebrew](http://brew.sh/index_zh-tw.html)：
+#### *3a2.* 安裝 [Homebrew](http://brew.sh/):
 
 {% highlight sh %}
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 {% endhighlight %}
 
-3-B-3. 安裝 [rbenv](https://github.com/sstephenson/rbenv)：
+#### *3a3.* 安裝 [rbenv](https://github.com/sstephenson/rbenv):
 
 {% highlight sh %}
 brew update
-brew install rbenv ruby-build
+brew install rbenv rbenv-gem-rehash ruby-build
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 {% endhighlight %}
 
-3-B-4. 用 rbenv 安裝 Ruby：
+#### *3a4.* 用 rbenv 裝 Ruby:
 
-用 `rbenv install -l` 可以看有那些版本的 Ruby 可以安裝。
+可以用 `rbenv install -l` 找到最新的 Ruby 版本。
 
 {% highlight sh %}
-rbenv install 2.1.1
+rbenv install 2.2.3
 {% endhighlight %}
 
-如果遇到 `OpenSSL::SSL::SSLError: ... : certificate verify failed` 錯誤，試試：
+如果遇到錯誤 `OpenSSL::SSL::SSLError: ... : certificate verify failed`，試試看這個方法。
 
 {% highlight sh %}
 brew install curl-ca-bundle
 cp /usr/local/opt/curl-ca-bundle/share/ca-bundle.crt `ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE'`
 {% endhighlight %}
 
-3-B-5. 設定預設使用的 Ruby:
+#### *3a5.* 設定預設的 Ruby 版本:
 
 {% highlight sh %}
-rbenv global 2.1.1
+rbenv global 2.2.3
 {% endhighlight %}
 
-3-B-6. 安裝 rails:
+#### *3a6.* 安裝 Rails:
 
 {% highlight sh %}
 gem install rails --no-ri --no-rdoc
 {% endhighlight %}
 
-**最後一步** 妳會需要文字編輯器來編輯程式碼檔案。我們推薦使用 Sublime Text 編輯器。
+### *3b.* 如果妳的版本是 10.6 、 10.7 或 10.8:
+下載對應版本的 RailsInstaller:
 
-* [下載並安裝 Sublime Text](http://www.sublimetext.com/2)
+* [10.7 與 10.8 的 RailsInstaller](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.7.app.tgz) <span class="muted">(325MB)</span>
+* [10.6 的 RailsInstaller](http://railsinstaller.s3.amazonaws.com/RailsInstaller-1.0.4-osx-10.6.app.tgz) <span class="muted">(224MB)</span>
 
-恭喜妳！現在有一個可用的 Ruby on Rails 環境了！
+點兩下剛剛下載的檔案，解壓縮到目前的資料夾。點兩下剛剛解壓縮的檔案 `RailsInstaller-1.0.4-osx-10.7.app` 或 `RailsInstaller-1.0.4-osx-10.6.app` 然後跟著指引步驟走。需要小心的是 Rails Installer OS X 會跳出 README 檔案，**忽略** 它。
+
+如果 Rails 版本不是最新的，使用下列指令進行更新。
+
+{% highlight sh %}
+gem update rails --no-ri --no-rdoc
+{% endhighlight %}
+
+跑跑看產生應用程式的指令，確認是不是一切運作順利。
+
+{% highlight sh %}
+rails new railsgirls
+{% endhighlight %}
+
+### *4.* 安裝編輯器來編輯程式
+
+我們推薦使用 Atom 編輯器。
+
+* [下載與安裝 Atom](https://atom.io/)
+
+如果是 Mac OS X 10.7 或更舊的版本，妳可以使用其他編輯器 [Sublime Text 2] (http://www.sublimetext.com/2).
+
+### *5.* 更新瀏覽器
+
+打開網址 [whatbrowser.org](http://whatbrowser.org) 確認是否為最新版本，如果不是的話就更新。
+
+恭喜妳！現在已經有 Rails on Rails 開發環境囉！
 
 <hr />
 
