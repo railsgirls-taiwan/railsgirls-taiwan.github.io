@@ -1,9 +1,8 @@
 destination: ./_site
-auto:        true
 lsi:         false
-server_port: 4000
-pygments:    true
-markdown:    redcarpet
+port:        4000
+hilighter:   true
+markdown:    kramdown
 permalink:   pretty
 url: http://railsgirls.tw
 maruku:
