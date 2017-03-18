@@ -315,7 +315,7 @@ rails generate uploader Picture
 打開 `app/models/idea.rb` 並在這行下面
 
 {% highlight ruby %}
-class Idea < ActiveRecord::Base
+class Idea < ApplicationRecord
 {% endhighlight %}
 
 加入

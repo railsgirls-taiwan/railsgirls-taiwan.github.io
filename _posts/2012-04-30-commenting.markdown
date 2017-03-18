@@ -33,7 +33,7 @@ rake db:migrate
 首先呢要確定 Rails 知道 ideas 與 comments 之間的關係，我們需要建立 Idea 與 Comment Model 之間的關係。一個 idea 可以有很多人留言，讓我們把這個關係加入 Idea Model。打開 `app/models/idea.rb`，在這行的後面：
 
 {% highlight ruby %}
-class Idea < ActiveRecord::Base
+class Idea < ApplicationRecord
 {% endhighlight %}
 
 加入
@@ -45,7 +45,7 @@ has_many :comments
 一個 comment 也需要知道它自己屬於那個 idea。打開 `app/models/comment.rb`，在這行的後面：
 
 {% highlight ruby %}
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
 {% endhighlight %}
 
 加入
