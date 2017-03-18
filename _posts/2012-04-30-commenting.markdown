@@ -72,7 +72,7 @@ belongs_to :idea
     <p><%= comment.body %></p>
   </div>
 <% end %>
-<%= render 'comments/form' %>
+<%= render 'comments/form', comment: @comment %>
 {% endhighlight %}
 
 打開 `app/controllers/ideas_controller.rb` 在 show action 新增這行
